@@ -1050,19 +1050,19 @@ footer {
     }
 
     .carousel-wrapper {
-        height: 350px;
+        height: 325px;
 
         margin-top: 20px;
     }
 
     .destination-card {
-        width: 78%;
+        width: 68%;
 
-        height: 330px;
+        height: 300px;
     }
 
     .destination-card.left-card {
-        left: 8%;
+        left: 12%;
 
         transform: translateX(-50%) scale(.72);
 
@@ -1070,7 +1070,7 @@ footer {
     }
 
     .destination-card.right-card {
-        left: 92%;
+        left: 88%;
 
         transform: translateX(-50%) scale(.72);
 
