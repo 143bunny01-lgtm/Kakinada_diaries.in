@@ -4,367 +4,653 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kakinada Diaries | Your City. Your Stories.</title>
+    <title>Kakinada Diaries | Everything Kakinada. One Place.</title>
 
     <meta name="description"
-          content="Discover Kakinada — places, food, events, stories and everything happening around the city.">
+        content="Discover the best of Kakinada — places, food, events, businesses and local stories.">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
+<!-- ================= HEADER ================= -->
 
-        <a href="#" class="brand">
-            <img src="logo.jpg" alt="Kakinada Diaries Logo">
+<header class="header">
+
+    <div class="logo-area">
+        <img src="logo.jpg" alt="Kakinada Diaries">
+    </div>
+
+    <nav class="desktop-nav">
+        <a href="#" class="active">Home</a>
+        <a href="#businesses">Businesses</a>
+        <a href="#places">Places</a>
+        <a href="#food">Food</a>
+        <a href="#events">Events</a>
+        <a href="#stories">Stories</a>
+        <a href="#services">Services</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button class="icon-btn" aria-label="Search">
+            ⌕
+        </button>
+
+        <button class="icon-btn" id="themeBtn" aria-label="Theme">
+            ☼
+        </button>
+
+        <a href="#promote" class="promote-btn">
+            Promote Your Business
         </a>
 
-        <nav class="desktop-nav">
-            <a href="#home">Home</a>
-            <a href="#explore">Explore</a>
-            <a href="#stories">Stories</a>
-            <a href="#events">Events</a>
-            <a href="#food">Food</a>
-        </nav>
-
-        <button class="menu-btn" id="menuBtn">
+        <button class="mobile-menu-btn" id="menuBtn">
             ☰
         </button>
 
-    </header>
-
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-
-        <button class="close-btn" id="closeBtn">×</button>
-
-        <a href="#home">Home</a>
-        <a href="#explore">Explore</a>
-        <a href="#stories">Stories</a>
-        <a href="#events">Events</a>
-        <a href="#food">Food</a>
-        <a href="#advertise">Advertise With Us</a>
-
     </div>
 
+</header>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
 
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
+<!-- ================= MOBILE MENU ================= -->
 
-    <!-- FLOATING PHOTO GALLERY -->
-    <div class="floating-gallery">
+<div class="mobile-menu" id="mobileMenu">
 
-        <div class="float-photo photo-1">
-            <div class="photo-label">KAKINADA</div>
+    <button class="close-menu" id="closeMenu">×</button>
+
+    <img src="logo.jpg" alt="Kakinada Diaries">
+
+    <a href="#">Home</a>
+    <a href="#businesses">Businesses</a>
+    <a href="#places">Places</a>
+    <a href="#food">Food</a>
+    <a href="#events">Events</a>
+    <a href="#stories">Stories</a>
+    <a href="#services">Services</a>
+
+    <a href="#promote" class="mobile-promote">
+        Promote Your Business
+    </a>
+
+</div>
+
+
+<!-- ================= DESTINATION HERO ================= -->
+
+<section class="destination-hero" id="places">
+
+    <div class="hero-decoration"></div>
+
+    <div class="hero-heading">
+
+        <div class="eyebrow">
+            <span>⌖</span> TOP DESTINATIONS
         </div>
 
-        <div class="float-photo photo-2">
-            <div class="photo-label">BEACH</div>
-        </div>
-
-        <div class="float-photo photo-3">
-            <div class="photo-label">CITY</div>
-        </div>
-
-        <div class="float-photo photo-4">
-            <div class="photo-label">LIFE</div>
-        </div>
-
-        <div class="float-photo photo-5">
-            <div class="photo-label">STORIES</div>
-        </div>
-
-    </div>
-
-
-    <!-- HERO CONTENT -->
-    <div class="hero-content">
-
-        <span class="small-title">
-            WELCOME TO
-        </span>
-
-        <h1>
-            KAKINADA<br>
-            <span>DIARIES</span>
-        </h1>
+        <h1>Explore the Best of Kakinada</h1>
 
         <p>
-            Your city. Your stories.<br>
-            Your Kakinada.
+            Beautiful places, unforgettable experiences
         </p>
 
-        <a href="#explore" class="hero-btn">
-            EXPLORE KAKINADA
-            <span>↓</span>
+    </div>
+
+
+    <div class="carousel-wrapper">
+
+        <button class="carousel-arrow left" id="prevBtn">
+            ←
+        </button>
+
+
+        <div class="destination-carousel" id="carousel">
+
+            <!-- CARD 1 -->
+
+            <article class="destination-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85"
+                    alt="Beach">
+
+                <div class="card-overlay"></div>
+
+                <div class="destination-number">
+                    01
+                </div>
+
+                <div class="destination-info">
+
+                    <h2>Kakinada Beach</h2>
+
+                    <p>
+                        Feel the breeze, endless waves
+                        and beautiful sunsets.
+                    </p>
+
+                    <button>
+                        View Details
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 2 -->
+
+            <article class="destination-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85"
+                    alt="Island">
+
+                <div class="card-overlay"></div>
+
+                <div class="destination-number">
+                    02
+                </div>
+
+                <div class="destination-info">
+
+                    <h2>Hope Island</h2>
+
+                    <p>
+                        A serene island with
+                        scenic beauty.
+                    </p>
+
+                    <button>
+                        View Details
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 3 -->
+
+            <article class="destination-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85"
+                    alt="Bridge">
+
+                <div class="card-overlay"></div>
+
+                <div class="destination-number">
+                    03
+                </div>
+
+                <div class="destination-info">
+
+                    <h2>Coringa Bridge</h2>
+
+                    <p>
+                        An iconic view with
+                        stunning surroundings.
+                    </p>
+
+                    <button>
+                        View Details
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 4 -->
+
+            <article class="destination-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85"
+                    alt="Nature">
+
+                <div class="card-overlay"></div>
+
+                <div class="destination-number">
+                    04
+                </div>
+
+                <div class="destination-info">
+
+                    <h2>Coringa Wildlife</h2>
+
+                    <p>
+                        Explore nature and
+                        peaceful surroundings.
+                    </p>
+
+                    <button>
+                        View Details
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD 5 -->
+
+            <article class="destination-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1000&q=85"
+                    alt="Nature">
+
+                <div class="card-overlay"></div>
+
+                <div class="destination-number">
+                    05
+                </div>
+
+                <div class="destination-info">
+
+                    <h2>Kakinada Coast</h2>
+
+                    <p>
+                        Discover another beautiful
+                        side of the city.
+                    </p>
+
+                    <button>
+                        View Details
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <button class="carousel-arrow right" id="nextBtn">
+            →
+        </button>
+
+    </div>
+
+
+    <!-- DOTS -->
+
+    <div class="carousel-dots" id="dots"></div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories">
+
+    <div class="category-grid">
+
+        <a href="#places" class="category-item">
+
+            <div class="category-icon">🏝️</div>
+
+            <h3>Beaches</h3>
+
+            <p>Sun, Sand & Sea</p>
+
+        </a>
+
+
+        <a href="#food" class="category-item">
+
+            <div class="category-icon">🍴</div>
+
+            <h3>Food</h3>
+
+            <p>Tasty & Delicious</p>
+
+        </a>
+
+
+        <a href="#events" class="category-item">
+
+            <div class="category-icon">📅</div>
+
+            <h3>Events</h3>
+
+            <p>What's Happening</p>
+
+        </a>
+
+
+        <a href="#places" class="category-item">
+
+            <div class="category-icon">📍</div>
+
+            <h3>Places</h3>
+
+            <p>Explore Around</p>
+
+        </a>
+
+
+        <a href="#businesses" class="category-item">
+
+            <div class="category-icon">🛍️</div>
+
+            <h3>Businesses</h3>
+
+            <p>Local & Trusted</p>
+
+        </a>
+
+
+        <a href="#" class="category-item">
+
+            <div class="category-icon">⠿</div>
+
+            <h3>All Categories</h3>
+
+            <p>See Everything</p>
+
         </a>
 
     </div>
 
-    <div class="scroll-text">
-        SCROLL TO EXPLORE
+</section>
+
+
+<!-- ================= TRENDING ================= -->
+
+<section class="trending section" id="stories">
+
+    <div class="section-top">
+
+        <div>
+            <span class="section-label">
+                🔥 TRENDING IN KAKINADA
+            </span>
+
+            <h2>What's happening now</h2>
+        </div>
+
+        <a href="#" class="view-all">
+            View All →
+        </a>
+
     </div>
 
-    </section>
 
-        <!-- TRENDING -->
-        <section class="section trending" id="stories">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="eyebrow">WHAT'S HAPPENING</span>
-                    <h2>Trending in<br><span>Kakinada</span></h2>
-                </div>
-
-                <p>
-                    Stories, places and moments
-                    that are getting everyone talking.
-                </p>
-
-            </div>
+    <div class="trending-grid">
 
 
-            <div class="cards">
+        <article class="trend-card">
 
-                <article class="story-card large-card">
+            <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=85"
+                alt="Cafe">
 
-                    <div class="card-image image-one"></div>
+            <div class="trend-content">
 
-                    <div class="card-content">
-                        <span>DISCOVER</span>
-                        <h3>Kakinada Beach</h3>
-                        <p>
-                            A different side of the city awaits.
-                        </p>
-                    </div>
+                <span class="tag food-tag">
+                    FOOD
+                </span>
 
-                </article>
+                <h3>
+                    New Cafe Opened
+                    Near MVP Colony
+                </h3>
 
-
-                <article class="story-card">
-
-                    <div class="card-image image-two"></div>
-
-                    <div class="card-content">
-                        <span>FOOD</span>
-                        <h3>Where Kakinada Eats</h3>
-                        <p>
-                            Local flavours worth discovering.
-                        </p>
-                    </div>
-
-                </article>
-
-
-                <article class="story-card">
-
-                    <div class="card-image image-three"></div>
-
-                    <div class="card-content">
-                        <span>EVENTS</span>
-                        <h3>What's On?</h3>
-                        <p>
-                            Events happening around the city.
-                        </p>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- EXPLORE -->
-        <section class="section explore" id="explore">
-
-            <div class="section-heading centered">
-
-                <span class="eyebrow">DISCOVER MORE</span>
-
-                <h2>
-                    Explore<br>
-                    <span>Kakinada</span>
-                </h2>
-
-                <p>
-                    From beaches to food, hidden places to
-                    unforgettable experiences.
-                </p>
-
-            </div>
-
-
-            <div class="explore-grid">
-
-                <a href="#" class="explore-item explore-beach">
-                    <div>
-                        <span>01</span>
-                        <h3>Places</h3>
-                        <p>Find your next favourite spot →</p>
-                    </div>
-                </a>
-
-
-                <a href="#" class="explore-item explore-food">
-                    <div>
-                        <span>02</span>
-                        <h3>Food</h3>
-                        <p>Taste the city →</p>
-                    </div>
-                </a>
-
-
-                <a href="#" class="explore-item explore-events">
-                    <div>
-                        <span>03</span>
-                        <h3>Events</h3>
-                        <p>Don't miss what's next →</p>
-                    </div>
-                </a>
-
-
-                <a href="#" class="explore-item explore-stories">
-                    <div>
-                        <span>04</span>
-                        <h3>Stories</h3>
-                        <p>See Kakinada differently →</p>
-                    </div>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- EVENTS -->
-        <section class="section events" id="events">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="eyebrow">DON'T MISS OUT</span>
-                    <h2>Upcoming<br><span>Events</span></h2>
-                </div>
-
-                <a href="#" class="text-link">
-                    VIEW ALL →
-                </a>
-
-            </div>
-
-
-            <div class="event-placeholder">
-
-                <div class="event-number">
-                    01
-                </div>
-
-                <div>
-                    <span>COMING SOON</span>
-                    <h3>Events around Kakinada</h3>
-                    <p>
-                        Concerts, festivals, exhibitions,
-                        entertainment and more.
-                    </p>
-                </div>
-
-                <div class="event-arrow">
-                    →
+                <div class="trend-bottom">
+                    <small>2 hours ago</small>
+                    <span>→</span>
                 </div>
 
             </div>
 
-        </section>
+        </article>
 
 
-        <!-- FOOD -->
-        <section class="food-section" id="food">
+        <article class="trend-card">
 
-            <div class="food-content">
+            <img
+                src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=85"
+                alt="Concert">
 
-                <span class="eyebrow">TASTE KAKINADA</span>
+            <div class="trend-content">
 
-                <h2>
-                    Good food.<br>
-                    <span>Good stories.</span>
-                </h2>
+                <span class="tag event-tag">
+                    EVENT
+                </span>
 
-                <p>
-                    Discover restaurants, cafés, street food
-                    and local favourites from around Kakinada.
-                </p>
+                <h3>
+                    Music Night at
+                    Fabin Convention
+                </h3>
 
-                <a href="#" class="dark-btn">
-                    EXPLORE FOOD →
-                </a>
+                <div class="trend-bottom">
+                    <small>1 day ago</small>
+                    <span>→</span>
+                </div>
 
             </div>
 
-        </section>
+        </article>
 
 
-        <!-- ADVERTISE -->
-        <section class="advertise" id="advertise">
+        <article class="trend-card">
 
-            <span class="eyebrow">FOR BUSINESSES</span>
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=85"
+                alt="Boat">
 
-            <h2>
-                Want your business<br>
-                <span>on Kakinada Diaries?</span>
-            </h2>
+            <div class="trend-content">
 
-            <p>
-                Reach the people of Kakinada through
-                our digital community.
-            </p>
+                <span class="tag place-tag">
+                    PLACE
+                </span>
 
-            <a href="#" class="red-btn">
-                ADVERTISE WITH US
-            </a>
+                <h3>
+                    Coringa Boat Ride
+                    Experience
+                </h3>
 
-        </section>
+                <div class="trend-bottom">
+                    <small>2 days ago</small>
+                    <span>→</span>
+                </div>
 
-    </main>
+            </div>
+
+        </article>
 
 
-    <!-- FOOTER -->
-    <footer>
+        <article class="trend-card">
 
-        <div class="footer-logo">
+            <img
+                src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=85"
+                alt="Store">
 
-            <img src="assets/images/logo.jpg"
-                 alt="Kakinada Diaries">
+            <div class="trend-content">
 
-        </div>
+                <span class="tag business-tag">
+                    BUSINESS
+                </span>
+
+                <h3>
+                    New Store Launch
+                    in Pithapuram Road
+                </h3>
+
+                <div class="trend-bottom">
+                    <small>3 days ago</small>
+                    <span>→</span>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROMOTE BUSINESS ================= -->
+
+<section class="promote-section section" id="promote">
+
+    <div class="promote-intro">
+
+        <span>
+            📣 GROW YOUR BUSINESS IN KAKINADA
+        </span>
+
+        <h2>
+            Promote Your Business
+            <br>
+            <strong>to Thousands</strong>
+        </h2>
 
         <p>
-            Your city. Your stories. Your Kakinada.
+            Get featured on Kakinada Diaries and
+            reach thousands of local people every day.
         </p>
 
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#explore">Explore</a>
-            <a href="#events">Events</a>
+        <a href="#" class="gold-button">
+            Promote Now
+            <span>→</span>
+        </a>
+
+    </div>
+
+
+    <div class="promote-stats">
+
+        <div>
+            <strong>184K+</strong>
+            <span>Local Audience</span>
+        </div>
+
+        <div>
+            <strong>High</strong>
+            <span>Visibility</span>
+        </div>
+
+        <div>
+            <strong>Grow</strong>
+            <span>More Customers</span>
+        </div>
+
+        <div>
+            <strong>100%</strong>
+            <span>Local</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <img src="logo.jpg" alt="Kakinada Diaries">
+
+            <p>
+                Everything Kakinada. One Place.
+            </p>
+
+            <div class="socials">
+
+                <a href="#">◎</a>
+                <a href="#">◉</a>
+                <a href="#">▶</a>
+                <a href="#">✉</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="#">Home</a>
+            <a href="#businesses">Businesses</a>
+            <a href="#places">Places</a>
             <a href="#food">Food</a>
-            <a href="#advertise">Advertise</a>
+            <a href="#events">Events</a>
+            <a href="#stories">Stories</a>
+
         </div>
 
-        <div class="copyright">
-            © 2026 Kakinada Diaries. All rights reserved.
+
+        <div class="footer-column">
+
+            <h3>For Businesses</h3>
+
+            <a href="#promote">Promote Your Business</a>
+            <a href="#">Business Login</a>
+            <a href="#">Add Business</a>
+            <a href="#">Pricing</a>
+
         </div>
 
-    </footer>
+
+        <div class="footer-column">
+
+            <h3>Support</h3>
+
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+
+        </div>
 
 
-    <script src="script.js"></script>
+        <div class="footer-column">
+
+            <h3>Contact Us</h3>
+
+            <p>☎ +91 90105 81234</p>
+            <p>✉ hello@kakinadadiaries.com</p>
+            <p>⌖ Kakinada, Andhra Pradesh</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Kakinada Diaries. All Rights Reserved.
+        </span>
+
+        <span>
+            Made with ❤️ for Kakinada
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
