@@ -29,32 +29,10 @@ const carousel = document.getElementById("carousel");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
-const dotsContainer = document.getElementById("dots");
-
 let currentIndex = 0;
 
 const totalCards = cards.length;
 
-
-/* CREATE DOTS */
-
-cards.forEach((_, index) => {
-
-    const dot = document.createElement("button");
-
-    dot.classList.add("carousel-dot");
-
-    dot.addEventListener("click", () => {
-
-        currentIndex = index;
-
-        updateCarousel();
-
-    });
-
-    dotsContainer.appendChild(dot);
-
-});
 
 
 /* UPDATE CAROUSEL */
@@ -102,20 +80,6 @@ function updateCarousel() {
 
     });
 
-
-    /* DOTS */
-
-    const dots =
-        document.querySelectorAll(".carousel-dot");
-
-    dots.forEach((dot, index) => {
-
-        dot.classList.toggle(
-            "active",
-            index === currentIndex
-        );
-
-    });
 
 }
 
