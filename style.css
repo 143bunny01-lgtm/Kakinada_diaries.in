@@ -1030,9 +1030,9 @@ footer {
     /* HERO */
 
     .destination-hero {
-        min-height: 650px;
+        min-height: 0px;
 
-        padding: 38px 0 20px;
+        padding: 38px 0 35px;
     }
 
     .hero-heading {
@@ -1046,7 +1046,8 @@ footer {
     }
 
     .hero-heading p {
-        font-size: 13px;
+    font-size: 13px;
+    margin-bottom: 0;
     }
 
     .carousel-wrapper {
