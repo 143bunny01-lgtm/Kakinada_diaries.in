@@ -1030,7 +1030,7 @@ footer {
     /* HERO */
 
     .destination-hero {
-        min-height: 570px;
+        min-height: 650px;
 
         padding: 38px 0 20px;
     }
@@ -1052,7 +1052,7 @@ footer {
     .carousel-wrapper {
         height: 325px;
 
-        margin-top: 20px;
+        margin-top: 0px;
     }
 
     .destination-card {
