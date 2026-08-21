@@ -4,13 +4,17 @@ const menuBtn = document.getElementById("menuBtn");
 const closeMenu = document.getElementById("closeMenu");
 const mobileMenu = document.getElementById("mobileMenu");
 
-menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.add("open");
-});
+if (menuBtn) {
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("open");
+    });
+}
 
-closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.remove("open");
-});
+if (closeMenu) {
+    closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+    });
+}
 
 document.querySelectorAll(".mobile-menu a").forEach(link => {
 
@@ -30,12 +34,10 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 let currentIndex = 0;
-
 const totalCards = cards.length;
 
 
-
-/* UPDATE CAROUSEL */
+/* ================= UPDATE CAROUSEL ================= */
 
 function updateCarousel() {
 
@@ -48,11 +50,12 @@ function updateCarousel() {
             "hidden-card"
         );
 
-
         let difference =
             (index - currentIndex + totalCards)
             % totalCards;
 
+
+        /* CENTER */
 
         if (difference === 0) {
 
@@ -60,17 +63,26 @@ function updateCarousel() {
 
         }
 
+
+        /* RIGHT */
+
         else if (difference === 1) {
 
             card.classList.add("right-card");
 
         }
 
+
+        /* LEFT */
+
         else if (difference === totalCards - 1) {
 
             card.classList.add("left-card");
 
         }
+
+
+        /* HIDDEN */
 
         else {
 
@@ -80,11 +92,10 @@ function updateCarousel() {
 
     });
 
-
 }
 
 
-/* NEXT */
+/* ================= NEXT ================= */
 
 function nextSlide() {
 
@@ -96,7 +107,7 @@ function nextSlide() {
 }
 
 
-/* PREVIOUS */
+/* ================= PREVIOUS ================= */
 
 function previousSlide() {
 
@@ -109,15 +120,13 @@ function previousSlide() {
 }
 
 
-nextBtn.addEventListener(
-    "click",
-    nextSlide
-);
+if (nextBtn) {
+    nextBtn.addEventListener("click", nextSlide);
+}
 
-prevBtn.addEventListener(
-    "click",
-    previousSlide
-);
+if (prevBtn) {
+    prevBtn.addEventListener("click", previousSlide);
+}
 
 
 /* ================= AUTO SLIDE ================= */
@@ -126,24 +135,30 @@ let autoSlide =
     setInterval(nextSlide, 5000);
 
 
-/* STOP AUTO SLIDE WHILE TOUCHING */
+/* ================= PAUSE ON TOUCH ================= */
 
-carousel.addEventListener(
-    "mouseenter",
-    () => {
-        clearInterval(autoSlide);
-    }
-);
+if (carousel) {
 
-carousel.addEventListener(
-    "mouseleave",
-    () => {
+    carousel.addEventListener(
+        "mouseenter",
+        () => {
+            clearInterval(autoSlide);
+        }
+    );
 
-        autoSlide =
-            setInterval(nextSlide, 5000);
+    carousel.addEventListener(
+        "mouseleave",
+        () => {
 
-    }
-);
+            clearInterval(autoSlide);
+
+            autoSlide =
+                setInterval(nextSlide, 5000);
+
+        }
+    );
+
+}
 
 
 /* ================= MOBILE SWIPE ================= */
@@ -152,56 +167,53 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 
-carousel.addEventListener(
-    "touchstart",
-    (event) => {
+if (carousel) {
 
-        touchStartX =
-            event.changedTouches[0].screenX;
+    carousel.addEventListener(
+        "touchstart",
+        (event) => {
 
-    },
-    { passive: true }
-);
+            touchStartX =
+                event.changedTouches[0].screenX;
 
-
-carousel.addEventListener(
-    "touchend",
-    (event) => {
-
-        touchEndX =
-            event.changedTouches[0].screenX;
-
-        handleSwipe();
-
-    },
-    { passive: true }
-);
+        },
+        { passive: true }
+    );
 
 
-function handleSwipe() {
+    carousel.addEventListener(
+        "touchend",
+        (event) => {
 
-    const distance =
-        touchEndX - touchStartX;
+            touchEndX =
+                event.changedTouches[0].screenX;
+
+            const distance =
+                touchEndX - touchStartX;
 
 
-    if (Math.abs(distance) < 50) {
-        return;
-    }
+            if (Math.abs(distance) < 50) {
+                return;
+            }
 
 
-    if (distance < 0) {
+            if (distance < 0) {
 
-        nextSlide();
+                nextSlide();
 
-    } else {
+            } else {
 
-        previousSlide();
+                previousSlide();
 
-    }
+            }
+
+        },
+        { passive: true }
+    );
 
 }
 
 
-/* INITIAL */
+/* ================= START ================= */
 
 updateCarousel();
