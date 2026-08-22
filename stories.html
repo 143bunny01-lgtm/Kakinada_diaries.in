@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Stories | Kakinada Diaries</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f8f5ef;
+    color:#171717;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    height:72px;
+
+    background:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    border-bottom:1px solid #eee;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+
+    object-fit:cover;
+}
+
+nav{
+    display:flex;
+
+    gap:28px;
+
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+
+    color:#171717;
+
+    font-size:14px;
+}
+
+nav a.active{
+    color:#c99b38;
+
+    border-bottom:2px solid #c99b38;
+
+    padding-bottom:8px;
+}
+
+.menu-btn{
+    display:none;
+
+    width:44px;
+    height:44px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#171717;
+
+    color:white;
+
+    font-size:22px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    background:#171717;
+
+    color:white;
+
+    text-align:center;
+
+    padding:75px 20px 65px;
+}
+
+.eyebrow{
+
+    color:#d4ad57;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+
+    font-family:Georgia,serif;
+
+    font-size:58px;
+
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+
+    color:#d4ad57;
+}
+
+.hero p{
+
+    color:#ccc;
+
+    font-size:15px;
+
+    max-width:620px;
+
+    margin:auto;
+
+    line-height:1.7;
+}
+
+
+/* ================= STORIES ================= */
+
+.stories-section{
+
+    padding:55px 5% 70px;
+}
+
+.section-title{
+
+    font-family:Georgia,serif;
+
+    font-size:38px;
+
+    margin-bottom:25px;
+}
+
+
+/* ================= FEATURED ================= */
+
+.featured-story{
+
+    display:grid;
+
+    grid-template-columns:1.35fr 1fr;
+
+    min-height:380px;
+
+    background:#171717;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    margin-bottom:60px;
+}
+
+.featured-image{
+
+    min-height:380px;
+
+    overflow:hidden;
+}
+
+.featured-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.featured-content{
+
+    padding:45px;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.featured-content .tag{
+
+    color:#d4ad57;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+}
+
+.featured-content h2{
+
+    font-family:Georgia,serif;
+
+    font-size:38px;
+
+    line-height:1.1;
+
+    margin:15px 0;
+}
+
+.featured-content p{
+
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    max-width:420px;
+}
+
+.story-meta{
+
+    margin-top:22px;
+
+    color:#888;
+
+    font-size:11px;
+}
+
+.read-story{
+
+    display:inline-block;
+
+    width:max-content;
+
+    margin-top:25px;
+
+    padding:12px 20px;
+
+    border-radius:25px;
+
+    background:#e5bd62;
+
+    color:#171717;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:bold;
+}
+
+
+/* ================= STORY GRID ================= */
+
+.story-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.story-card{
+
+    background:white;
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.06);
+
+    transition:.3s;
+}
+
+.story-card:hover{
+
+    transform:translateY(-5px);
+}
+
+.story-image{
+
+    height:220px;
+
+    overflow:hidden;
+}
+
+.story-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.story-card:hover
+.story-image img{
+
+    transform:scale(1.05);
+}
+
+.story-content{
+
+    padding:20px;
+}
+
+.story-tag{
+
+    color:#b0832d;
+
+    font-size:10px;
+
+    letter-spacing:1.5px;
+
+    font-weight:bold;
+}
+
+.story-card h3{
+
+    font-family:Georgia,serif;
+
+    font-size:22px;
+
+    margin:9px 0;
+}
+
+.story-card p{
+
+    color:#777;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+.story-footer{
+
+    margin-top:16px;
+
+    padding-top:12px;
+
+    border-top:1px solid #eee;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:10px;
+
+    color:#888;
+}
+
+.story-link{
+
+    color:#171717;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+
+/* ================= CTA ================= */
+
+.cta{
+
+    margin:0 5% 70px;
+
+    padding:40px;
+
+    background:#171717;
+
+    border-radius:20px;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.cta h2{
+
+    font-family:Georgia,serif;
+
+    font-size:30px;
+
+    margin-bottom:8px;
+}
+
+.cta p{
+
+    color:#aaa;
+
+    font-size:13px;
+}
+
+.cta button{
+
+    border:none;
+
+    background:#e5bd62;
+
+    color:#171717;
+
+    padding:14px 24px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+}
+
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+
+    background:#f8f5ef;
+
+    border-top:1px solid #e5dfd3;
+}
+
+.footer-main{
+
+    padding:60px 5% 50px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr 1.3fr;
+
+    gap:40px;
+}
+
+.footer-brand img{
+
+    width:85px;
+    height:85px;
+
+    object-fit:cover;
+}
+
+.footer-brand p{
+
+    margin-top:18px;
+
+    color:#555;
+
+    line-height:1.6;
+
+    font-size:14px;
+}
+
+.socials{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.socials a{
+
+    width:34px;
+    height:34px;
+
+    border:1px solid #bbb;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#171717;
+}
+
+.footer-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.footer-column h3{
+
+    font-family:Georgia,serif;
+
+    font-size:17px;
+
+    margin-bottom:8px;
+}
+
+.footer-column a{
+
+    text-decoration:none;
+
+    color:#555;
+
+    font-size:13px;
+}
+
+.contact p{
+
+    color:#555;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+.footer-bottom{
+
+    background:#171717;
+
+    color:#aaa;
+
+    padding:15px 5%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:12px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    header{
+
+        height:68px;
+
+        padding:0 15px;
+    }
+
+    .logo img{
+
+        width:52px;
+        height:52px;
+    }
+
+    nav{
+
+        display:none;
+    }
+
+    .menu-btn{
+
+        display:block;
+    }
+
+    .hero{
+
+        padding:55px 20px 50px;
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+        line-height:1.1;
+    }
+
+    .stories-section{
+
+        padding:40px 20px 50px;
+    }
+
+    .featured-story{
+
+        grid-template-columns:1fr;
+
+        margin-bottom:45px;
+    }
+
+    .featured-image{
+
+        height:230px;
+
+        min-height:230px;
+    }
+
+    .featured-content{
+
+        padding:28px 22px;
+    }
+
+    .featured-content h2{
+
+        font-size:30px;
+    }
+
+    .story-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    .story-image{
+
+        height:210px;
+    }
+
+    .cta{
+
+        margin:0 20px 50px;
+
+        padding:28px 22px;
+
+        display:block;
+    }
+
+    .cta button{
+
+        margin-top:20px;
+    }
+
+    .footer-main{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:35px 25px;
+
+        padding:45px 25px;
+    }
+
+    .footer-brand{
+
+        grid-column:1 / -1;
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        gap:8px;
+
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+
+        <a href="index.html">
+
+            <img
+                src="logo.jpg"
+                alt="Kakinada Diaries">
+
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="businesses.html">
+            Businesses
+        </a>
+
+        <a href="places.html">
+            Places
+        </a>
+
+        <a href="food.html">
+            Food
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="stories.html"
+           class="active">
+            Stories
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+    </nav>
+
+
+    <button class="menu-btn">
+        ☰
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="eyebrow">
+        STORIES FROM OUR CITY
+    </div>
+
+    <h1>
+        Kakinada <span>Stories</span>
+    </h1>
+
+    <p>
+        Discover the people, places, moments and
+        stories that make Kakinada special.
+    </p>
+
+</section>
+
+
+<!-- ================= STORIES ================= -->
+
+<section class="stories-section">
+
+
+    <!-- FEATURED -->
+
+    <div class="eyebrow">
+        FEATURED STORY
+    </div>
+
+
+    <article class="featured-story">
+
+        <div class="featured-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+                alt="Kakinada story">
+
+        </div>
+
+
+        <div class="featured-content">
+
+            <div class="tag">
+                PHOTO STORY
+            </div>
+
+            <h2>
+                The Kakinada
+                We Know & Love
+            </h2>
+
+            <p>
+                From peaceful mornings by the coast to
+                busy streets filled with life, discover
+                the everyday moments that tell the story
+                of our city.
+            </p>
+
+            <div class="story-meta">
+                Kakinada Diaries · Photo Story
+            </div>
+
+            <a href="#" class="read-story">
+                Read Story →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- TRENDING -->
+
+    <div class="eyebrow">
+        TRENDING STORIES
+    </div>
+
+    <h2 class="section-title">
+        Stories you shouldn't miss
+    </h2>
+
+
+    <div class="story-grid">
+
+
+        <!-- STORY 1 -->
+
+        <article class="story-card">
+
+            <div class="story-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+                    alt="Beach story">
+
+            </div>
+
+            <div class="story-content">
+
+                <div class="story-tag">
+                    TRAVEL
+                </div>
+
+                <h3>
+                    A Morning by the Coast
+                </h3>
+
+                <p>
+                    Experience the peaceful side of
+                    Kakinada before the city wakes up.
+                </p>
+
+                <div class="story-footer">
+
+                    <span>
+                        Kakinada Diaries
+                    </span>
+
+                    <a href="#" class="story-link">
+                        Read →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- STORY 2 -->
+
+        <article class="story-card">
+
+            <div class="story-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+                    alt="Food story">
+
+            </div>
+
+            <div class="story-content">
+
+                <div class="story-tag">
+                    FOOD
+                </div>
+
+                <h3>
+                    Flavours of Kakinada
+                </h3>
+
+                <p>
+                    A journey through the tastes,
+                    recipes and food spots loved by locals.
+                </p>
+
+                <div class="story-footer">
+
+                    <span>
+                        Food Stories
+                    </span>
+
+                    <a href="#" class="story-link">
+                        Read →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- STORY 3 -->
+
+        <article class="story-card">
+
+            <div class="story-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=80"
+                    alt="Event story">
+
+            </div>
+
+            <div class="story-content">
+
+                <div class="story-tag">
+                    EVENTS
+                </div>
+
+                <h3>
+                    The City Comes Alive
+                </h3>
+
+                <p>
+                    The events, celebrations and people
+                    bringing new energy to Kakinada.
+                </p>
+
+                <div class="story-footer">
+
+                    <span>
+                        City Life
+                    </span>
+
+                    <a href="#" class="story-link">
+                        Read →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- STORY 4 -->
+
+        <article class="story-card">
+
+            <div class="story-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                    alt="Nature story">
+
+            </div>
+
+            <div class="story-content">
+
+                <div class="story-tag">
+                    NATURE
+                </div>
+
+                <h3>
+                    Into the Mangroves
+                </h3>
+
+                <p>
+                    Explore the natural beauty and wildlife
+                    surrounding Kakinada.
+                </p>
+
+                <div class="story-footer">
+
+                    <span>
+                        Nature
+                    </span>
+
+                    <a href="#" class="story-link">
+                        Read →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- STORY 5 -->
+
+        <article class="story-card">
+
+            <div class="story-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=900&q=80"
+                    alt="People story">
+
+            </div>
+
+            <div class="story-content">
+
+                <div class="story-tag">
+                    PEOPLE
+                </div>
+
+                <h3>
+                    Faces of Kakinada
+                </h3>
+
+                <p>
+                    Meet the people, creators and local
+                    personalities shaping our city.
+                </p>
+
+                <div class="story-footer">
+
+                    <span>
+                        People
+                    </span>
+
+                    <a href="#" class="story-link">
+                        Read →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- STORY 6 -->
+
+        <article class="story-card">
+
+            <div class="story-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80"
+                    alt="Weekend story">
+
+            </div>
+
+            <div class="story-content">
+
+                <div class="story-tag">
+                    WEEKEND
+                </div>
+
+                <h3>
+                    Weekend Around Kakinada
+                </h3>
+
+                <p>
+                    Places, food and experiences to enjoy
+                    when you have a free weekend.
+                </p>
+
+                <div class="story-footer">
+
+                    <span>
+                        Weekend Guide
+                    </span>
+
+                    <a href="#" class="story-link">
+                        Read →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div>
+
+        <h2>
+            Have a story to share?
+        </h2>
+
+        <p>
+            Tell us about a person, place or moment
+            that deserves to be seen by Kakinada.
+        </p>
+
+    </div>
+
+    <button>
+        Submit Your Story →
+    </button>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+<div class="footer-main">
+
+
+    <div class="footer-brand">
+
+        <img
+            src="logo.jpg"
+            alt="Kakinada Diaries">
+
+        <p>
+            Everything Kakinada.<br>
+            One Place.
+        </p>
+
+        <div class="socials">
+
+            <a href="#">◎</a>
+
+            <a href="#">◉</a>
+
+            <a href="#">▶</a>
+
+            <a href="#">✉</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>
+            Quick Links
+        </h3>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="businesses.html">
+            Businesses
+        </a>
+
+        <a href="places.html">
+            Places
+        </a>
+
+        <a href="food.html">
+            Food
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="stories.html">
+            Stories
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>
+            For Businesses
+        </h3>
+
+        <a href="#">
+            Promote Your Business
+        </a>
+
+        <a href="#">
+            Business Login
+        </a>
+
+        <a href="#">
+            Add Business
+        </a>
+
+        <a href="#">
+            Pricing
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>
+            Support
+        </h3>
+
+        <a href="#">
+            About Us
+        </a>
+
+        <a href="#">
+            Contact Us
+        </a>
+
+        <a href="#">
+            Privacy Policy
+        </a>
+
+        <a href="#">
+            Terms & Conditions
+        </a>
+
+    </div>
+
+
+    <div class="footer-column contact">
+
+        <h3>
+            Contact Us
+        </h3>
+
+        <p>
+            📞 +91 90105 81234
+        </p>
+
+        <p>
+            ✉ hello@kakinadadiaries.com
+        </p>
+
+        <p>
+            📍 Kakinada, Andhra Pradesh
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    <span>
+        © 2026 Kakinada Diaries.
+        All Rights Reserved.
+    </span>
+
+    <span>
+        Made with ❤️ for Kakinada
+    </span>
+
+</div>
+
+</footer>
+
+
+</body>
+  </html>
