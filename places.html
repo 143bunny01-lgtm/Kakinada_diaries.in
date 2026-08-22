@@ -1,726 +1,1568 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kakinada Places | Kakinada Diaries</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<title>Places | Kakinada Diaries</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
-  <div class="logo-area">
-    <a href="index.html">
-      <img src="logo.jpg" alt="Kakinada Diaries">
-    </a>
-  </div>
+    <div class="logo-area">
 
-  <!-- DESKTOP NAV -->
+        <a href="index.html">
 
-  <nav class="desktop-nav">
+            <img
+                src="logo.jpg"
+                alt="Kakinada Diaries">
 
-    <a href="index.html">
-      Home
-    </a>
+        </a>
 
-    <a href="businesses.html">
-      Businesses
-    </a>
+    </div>
 
-    <a href="places.html" class="active">
-      Places
-    </a>
 
-    <a href="food.html">
-      Food
-    </a>
+    <!-- DESKTOP NAVIGATION -->
 
-    <a href="events.html">
-      Events
-    </a>
+    <nav class="desktop-nav">
 
-    <a href="services.html">
-      Services
-    </a>
+        <a href="index.html">
+            Home
+        </a>
 
-  </nav>
+        <a href="businesses.html">
+            Businesses
+        </a>
 
-  <div class="header-actions">
+        <a
+            href="places.html"
+            class="active">
 
-    <button class="icon-btn">
-      ⌕
-    </button>
+            Places
 
-    <button class="icon-btn">
-      ☼
-    </button>
+        </a>
 
-    <a href="#promote" class="promote-btn">
-      Promote Your Business
-    </a>
+        <a href="food.html">
+            Food
+        </a>
 
-    <button
-      class="mobile-menu-btn"
-      id="menuBtn">
-      ☰
-    </button>
+        <a href="events.html">
+            Events
+        </a>
 
-  </div>
+        <a href="services.html">
+            Services
+        </a>
+
+    </nav>
+
+
+    <!-- HEADER ACTIONS -->
+
+    <div class="header-actions">
+
+        <button
+            class="icon-btn"
+            aria-label="Search">
+
+            ⌕
+
+        </button>
+
+
+        <button
+            class="icon-btn"
+            aria-label="Theme">
+
+            ☼
+
+        </button>
+
+
+        <a
+            href="#promote"
+            class="promote-btn">
+
+            Promote Your Business
+
+        </a>
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="mobile-menu-btn"
+            id="menuBtn"
+            aria-label="Open menu">
+
+            ☰
+
+        </button>
+
+    </div>
 
 </header>
 
 
-<!-- ================= MOBILE MENU ================= -->
+
+<!-- =====================================================
+     PREMIUM MOBILE MENU
+===================================================== -->
 
 <div
-  class="mobile-menu"
-  id="mobileMenu">
-
-  <!-- CLOSE -->
-
-  <button
-    class="close-menu"
-    id="closeMenu">
-    ×
-  </button>
+    class="mobile-menu"
+    id="mobileMenu">
 
 
-  <!-- BRAND -->
+    <!-- CLOSE -->
 
-  <div class="mobile-brand">
+    <button
+        class="close-menu"
+        id="closeMenu"
+        aria-label="Close menu">
 
-    <img
-      src="logo.jpg"
-      alt="Kakinada Diaries">
+        ×
 
-    <span>
-      EXPLORE | DISCOVER | EXPERIENCE
-    </span>
-
-  </div>
+    </button>
 
 
-  <!-- TITLE -->
+    <!-- BRAND -->
 
-  <div class="mobile-menu-title">
+    <div class="mobile-brand">
 
-    <small>
-      Explore
-    </small>
-
-    <h2>
-      Kakinada
-    </h2>
-
-    <div class="title-line"></div>
-
-  </div>
+        <img
+            src="logo.jpg"
+            alt="Kakinada Diaries">
 
 
-  <!-- NAVIGATION -->
+        <span>
 
-  <nav class="mobile-navigation">
+            EXPLORE | DISCOVER | EXPERIENCE
 
-    <a href="index.html">
-
-      <span class="menu-icon">⌂</span>
-
-      <span>Home</span>
-
-      <b>→</b>
-
-    </a>
-
-
-    <a href="businesses.html">
-
-      <span class="menu-icon">▱</span>
-
-      <span>Businesses</span>
-
-      <b>→</b>
-
-    </a>
-
-
-    <a href="places.html">
-
-      <span class="menu-icon">⊕</span>
-
-      <span>Places</span>
-
-      <b>→</b>
-
-    </a>
-
-
-    <a href="food.html">
-
-      <span class="menu-icon">♜</span>
-
-      <span>Food</span>
-
-      <b>→</b>
-
-    </a>
-
-
-    <a href="events.html">
-
-      <span class="menu-icon">□</span>
-
-      <span>Events</span>
-
-      <b>→</b>
-
-    </a>
-
-
-    <a href="services.html">
-
-      <span class="menu-icon">▤</span>
-
-      <span>Services</span>
-
-      <b>→</b>
-
-    </a>
-
-  </nav>
-
-
-  <!-- PROMOTE -->
-
-  <a
-    href="#promote"
-    class="mobile-promote">
-
-    <div class="promote-icon">
-      📣
-    </div>
-
-    <div class="promote-text">
-
-      <strong>
-        Promote Your Business
-      </strong>
-
-      <span>
-        Get featured and reach thousands of Kakinada people.
-      </span>
+        </span>
 
     </div>
 
-    <div class="promote-arrow">
-      →
-    </div>
-
-  </a>
 
 
-  <!-- CONNECT -->
+    <!-- MENU TITLE -->
 
-  <div class="mobile-connect">
+    <div class="mobile-menu-title">
 
-    <div class="connect-title">
+        <small>
+            Explore
+        </small>
 
-      <span>•</span>
 
-      CONNECT WITH US
+        <h2>
+            Kakinada
+        </h2>
 
-      <span>•</span>
+
+        <div class="title-line"></div>
 
     </div>
 
 
-    <div class="connect-links">
 
-      <a href="#">
-        <span>◎</span>
-        Instagram
-      </a>
+    <!-- MENU LINKS -->
 
-      <a href="#">
-        <span>◉</span>
-        WhatsApp
-      </a>
+    <nav class="mobile-navigation">
 
-      <a href="#">
-        <span>✉</span>
-        Email
-      </a>
+
+        <a href="index.html">
+
+            <span class="menu-icon">
+                ⌂
+            </span>
+
+            <span>
+                Home
+            </span>
+
+            <b>
+                →
+            </b>
+
+        </a>
+
+
+
+        <a href="businesses.html">
+
+            <span class="menu-icon">
+                ▱
+            </span>
+
+            <span>
+                Businesses
+            </span>
+
+            <b>
+                →
+            </b>
+
+        </a>
+
+
+
+        <a href="places.html">
+
+            <span class="menu-icon">
+                ⊕
+            </span>
+
+            <span>
+                Places
+            </span>
+
+            <b>
+                →
+            </b>
+
+        </a>
+
+
+
+        <a href="food.html">
+
+            <span class="menu-icon">
+                ♜
+            </span>
+
+            <span>
+                Food
+            </span>
+
+            <b>
+                →
+            </b>
+
+        </a>
+
+
+
+        <a href="events.html">
+
+            <span class="menu-icon">
+                □
+            </span>
+
+            <span>
+                Events
+            </span>
+
+            <b>
+                →
+            </b>
+
+        </a>
+
+
+
+        <a href="services.html">
+
+            <span class="menu-icon">
+                ▤
+            </span>
+
+            <span>
+                Services
+            </span>
+
+            <b>
+                →
+            </b>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- PROMOTE CARD -->
+
+    <a
+        href="#promote"
+        class="mobile-promote">
+
+
+        <div class="promote-icon">
+
+            📣
+
+        </div>
+
+
+        <div class="promote-text">
+
+            <strong>
+                Promote Your Business
+            </strong>
+
+            <span>
+                Get featured and reach thousands
+                of Kakinada people.
+            </span>
+
+        </div>
+
+
+        <div class="promote-arrow">
+
+            →
+
+        </div>
+
+
+    </a>
+
+
+
+    <!-- CONNECT -->
+
+    <div class="mobile-connect">
+
+
+        <div class="connect-title">
+
+            <span></span>
+
+            CONNECT WITH US
+
+            <span></span>
+
+        </div>
+
+
+        <div class="connect-links">
+
+
+            <a href="#">
+
+                <span>
+                    ◎
+                </span>
+
+                Instagram
+
+            </a>
+
+
+            <a href="#">
+
+                <span>
+                    ◉
+                </span>
+
+                WhatsApp
+
+            </a>
+
+
+            <a href="#">
+
+                <span>
+                    ✉
+                </span>
+
+                Email
+
+            </a>
+
+
+        </div>
 
     </div>
 
-  </div>
 
 </div>
 
 
-<!-- ================= HERO ================= -->
 
-<section class="hero">
+<!-- =====================================================
+     DESTINATION HERO
+===================================================== -->
 
-  <div class="eyebrow">
-    DISCOVER KAKINADA
-  </div>
+<section class="destination-hero">
 
-  <h1>
-    Kakinada <span>Places</span>
-  </h1>
 
-  <p>
-    Explore beautiful beaches, peaceful destinations,
-    famous landmarks and hidden gems around Kakinada.
-  </p>
+    <div class="hero-decoration"></div>
+
+
+    <div class="hero-heading">
+
+        <div class="eyebrow">
+
+            DISCOVER KAKINADA
+
+        </div>
+
+
+        <h1>
+
+            Places to Explore
+
+        </h1>
+
+
+        <p>
+
+            Discover the best places around Kakinada
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         CAROUSEL
+    ================================================= -->
+
+    <div class="carousel-wrapper">
+
+
+        <button
+            class="carousel-arrow left"
+            id="prevBtn"
+            aria-label="Previous">
+
+            ←
+
+        </button>
+
+
+        <div
+            class="destination-carousel"
+            id="destinationCarousel">
+
+
+            <!-- CARD 1 -->
+
+            <article
+                class="destination-card active"
+                data-index="0">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85"
+                    alt="Kakinada Beach">
+
+
+                <div class="card-overlay"></div>
+
+
+                <div class="destination-number">
+
+                    01
+
+                </div>
+
+
+                <div class="destination-info">
+
+                    <h2>
+                        Kakinada Beach
+                    </h2>
+
+                    <p>
+                        Enjoy the sea breeze,
+                        sunsets and peaceful
+                        coastal views.
+                    </p>
+
+                    <button>
+
+                        Explore
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 2 -->
+
+            <article
+                class="destination-card"
+                data-index="1">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85"
+                    alt="Coringa Wildlife Sanctuary">
+
+
+                <div class="card-overlay"></div>
+
+
+                <div class="destination-number">
+
+                    02
+
+                </div>
+
+
+                <div class="destination-info">
+
+                    <h2>
+                        Coringa Wildlife Sanctuary
+                    </h2>
+
+                    <p>
+                        Explore mangroves,
+                        wildlife and beautiful
+                        natural surroundings.
+                    </p>
+
+                    <button>
+
+                        Explore
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 3 -->
+
+            <article
+                class="destination-card"
+                data-index="2">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+                    alt="Hope Island">
+
+
+                <div class="card-overlay"></div>
+
+
+                <div class="destination-number">
+
+                    03
+
+                </div>
+
+
+                <div class="destination-info">
+
+                    <h2>
+                        Hope Island
+                    </h2>
+
+                    <p>
+                        Discover the calm waters
+                        and scenic coastal beauty.
+                    </p>
+
+                    <button>
+
+                        Explore
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 4 -->
+
+            <article
+                class="destination-card"
+                data-index="3">
+
+                <img
+                    src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85"
+                    alt="Kakinada Landmark">
+
+
+                <div class="card-overlay"></div>
+
+
+                <div class="destination-number">
+
+                    04
+
+                </div>
+
+
+                <div class="destination-info">
+
+                    <h2>
+                        Kakinada Landmarks
+                    </h2>
+
+                    <p>
+                        Explore iconic places and
+                        memorable locations.
+                    </p>
+
+                    <button>
+
+                        Explore
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARD 5 -->
+
+            <article
+                class="destination-card"
+                data-index="4">
+
+                <img
+                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"
+                    alt="Nearby Destination">
+
+
+                <div class="card-overlay"></div>
+
+
+                <div class="destination-number">
+
+                    05
+
+                </div>
+
+
+                <div class="destination-info">
+
+                    <h2>
+                        Nearby Destinations
+                    </h2>
+
+                    <p>
+                        Find beautiful places for
+                        your next short trip.
+                    </p>
+
+                    <button>
+
+                        Explore
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <button
+            class="carousel-arrow right"
+            id="nextBtn"
+            aria-label="Next">
+
+            →
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- DOTS REMOVED -->
 
 </section>
 
 
-<!-- ================= CATEGORIES ================= -->
 
-<section class="category-section">
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
 
-  <div class="eyebrow">
-    EXPLORE BY TYPE
-  </div>
+<section class="categories">
 
-  <h2 class="section-title">
-    Find your next destination
-  </h2>
 
-  <div class="categories">
+    <div class="category-grid">
 
-    <div class="category active">
-      All
+
+        <a
+            href="#"
+            class="category-item">
+
+            <div class="category-icon">
+                🌊
+            </div>
+
+            <h3>
+                Beaches
+            </h3>
+
+            <p>
+                Coastal escapes
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="category-item">
+
+            <div class="category-icon">
+                🌿
+            </div>
+
+            <h3>
+                Nature
+            </h3>
+
+            <p>
+                Green destinations
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="category-item">
+
+            <div class="category-icon">
+                🛕
+            </div>
+
+            <h3>
+                Temples
+            </h3>
+
+            <p>
+                Spiritual places
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="category-item">
+
+            <div class="category-icon">
+                📍
+            </div>
+
+            <h3>
+                Landmarks
+            </h3>
+
+            <p>
+                Famous places
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="category-item">
+
+            <div class="category-icon">
+                🌅
+            </div>
+
+            <h3>
+                Sunsets
+            </h3>
+
+            <p>
+                Scenic views
+            </p>
+
+        </a>
+
+
+
+        <a
+            href="#"
+            class="category-item">
+
+            <div class="category-icon">
+                🗺️
+            </div>
+
+            <h3>
+                Nearby
+            </h3>
+
+            <p>
+                Explore more
+            </p>
+
+        </a>
+
+
     </div>
-
-    <div class="category">
-      Beaches
-    </div>
-
-    <div class="category">
-      Nature
-    </div>
-
-    <div class="category">
-      Temples
-    </div>
-
-    <div class="category">
-      Landmarks
-    </div>
-
-    <div class="category">
-      Tourist Spots
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- ================= PLACES ================= -->
 
-<section class="places">
+<!-- =====================================================
+     FEATURED PLACES
+===================================================== -->
 
-  <div class="grid">
+<section class="section">
 
 
-    <!-- 1 -->
+    <div class="section-top">
 
-    <article class="card">
 
-      <img
-        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
-        alt="Kakinada Beach">
+        <div>
 
-      <div class="card-content">
+            <div class="section-label">
+                EXPLORE
+            </div>
 
-        <div class="tag">
-          BEACH
+            <h2>
+                Popular Places
+            </h2>
+
         </div>
 
-        <h2>
-          Kakinada Beach
-        </h2>
 
-        <p>
-          Enjoy the sea breeze, beautiful sunsets
-          and peaceful coastal views.
-        </p>
+        <a
+            href="#"
+            class="view-all">
 
-        <div class="location">
-          📍 Kakinada
-        </div>
+            View All →
 
-        <a href="#" class="view">
-          View Details <span>→</span>
         </a>
 
-      </div>
 
-    </article>
-
-
-    <!-- 2 -->
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
-        alt="Coringa Wildlife Sanctuary">
-
-      <div class="card-content">
-
-        <div class="tag">
-          NATURE
-        </div>
-
-        <h2>
-          Coringa Wildlife Sanctuary
-        </h2>
-
-        <p>
-          Discover mangrove forests, wildlife
-          and the natural beauty near Kakinada.
-        </p>
-
-        <div class="location">
-          📍 Coringa
-        </div>
-
-        <a href="#" class="view">
-          View Details <span>→</span>
-        </a>
-
-      </div>
-
-    </article>
+    </div>
 
 
-    <!-- 3 -->
 
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80"
-        alt="Coringa Bridge">
-
-      <div class="card-content">
-
-        <div class="tag">
-          LANDMARK
-        </div>
-
-        <h2>
-          Coringa Bridge
-        </h2>
-
-        <p>
-          A beautiful destination surrounded by
-          scenic views and peaceful surroundings.
-        </p>
-
-        <div class="location">
-          📍 Kakinada
-        </div>
-
-        <a href="#" class="view">
-          View Details <span>→</span>
-        </a>
-
-      </div>
-
-    </article>
+    <div class="trending-grid">
 
 
-    <!-- 4 -->
+        <!-- PLACE -->
 
-    <article class="card">
+        <article class="trend-card">
 
-      <img
-        src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
-        alt="Local Temples">
-
-      <div class="card-content">
-
-        <div class="tag">
-          TEMPLE
-        </div>
-
-        <h2>
-          Local Temples
-        </h2>
-
-        <p>
-          Explore the spiritual and cultural
-          places around Kakinada.
-        </p>
-
-        <div class="location">
-          📍 Kakinada
-        </div>
-
-        <a href="#" class="view">
-          View Details <span>→</span>
-        </a>
-
-      </div>
-
-    </article>
+            <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+                alt="Kakinada Beach">
 
 
-    <!-- 5 -->
+            <div class="trend-content">
 
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
-        alt="Hope Island">
-
-      <div class="card-content">
-
-        <div class="tag">
-          TOURIST SPOT
-        </div>
-
-        <h2>
-          Hope Island
-        </h2>
-
-        <p>
-          Experience the calm waters and scenic
-          beauty of this coastal destination.
-        </p>
-
-        <div class="location">
-          📍 Kakinada Coast
-        </div>
-
-        <a href="#" class="view">
-          View Details <span>→</span>
-        </a>
-
-      </div>
-
-    </article>
+                <span class="tag place-tag">
+                    PLACE
+                </span>
 
 
-    <!-- 6 -->
-
-    <article class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
-        alt="Nearby Destinations">
-
-      <div class="card-content">
-
-        <div class="tag">
-          DESTINATION
-        </div>
-
-        <h2>
-          Nearby Destinations
-        </h2>
-
-        <p>
-          Discover beautiful places around
-          Kakinada perfect for a short trip.
-        </p>
-
-        <div class="location">
-          📍 Around Kakinada
-        </div>
-
-        <a href="#" class="view">
-          View Details <span>→</span>
-        </a>
-
-      </div>
-
-    </article>
+                <h3>
+                    Kakinada Beach
+                </h3>
 
 
-  </div>
+                <div class="trend-bottom">
+
+                    <span>
+                        📍 Kakinada
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PLACE -->
+
+        <article class="trend-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80"
+                alt="Coringa">
+
+
+            <div class="trend-content">
+
+                <span class="tag place-tag">
+                    NATURE
+                </span>
+
+
+                <h3>
+                    Coringa Wildlife Sanctuary
+                </h3>
+
+
+                <div class="trend-bottom">
+
+                    <span>
+                        📍 Coringa
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PLACE -->
+
+        <article class="trend-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+                alt="Hope Island">
+
+
+            <div class="trend-content">
+
+                <span class="tag place-tag">
+                    DESTINATION
+                </span>
+
+
+                <h3>
+                    Hope Island
+                </h3>
+
+
+                <div class="trend-bottom">
+
+                    <span>
+                        📍 Kakinada Coast
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PLACE -->
+
+        <article class="trend-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80"
+                alt="Nearby Destination">
+
+
+            <div class="trend-content">
+
+                <span class="tag place-tag">
+                    TRAVEL
+                </span>
+
+
+                <h3>
+                    Nearby Destinations
+                </h3>
+
+
+                <div class="trend-bottom">
+
+                    <span>
+                        📍 Around Kakinada
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
 
 </section>
 
 
-<!-- ================= CTA ================= -->
 
-<section class="cta" id="promote">
+<!-- =====================================================
+     PROMOTE SECTION
+===================================================== -->
 
-  <div>
+<section
+    class="promote-section"
+    id="promote">
 
-    <h2>
-      Know a beautiful place?
-    </h2>
 
-    <p>
-      Suggest a destination and help us discover
-      more of Kakinada.
-    </p>
+    <div class="promote-intro">
 
-  </div>
 
-  <button>
-    Suggest a Place →
-  </button>
+        <span>
+            HAVE A PLACE TO SHARE?
+        </span>
+
+
+        <h2>
+
+            Help us discover
+            <strong>
+                more of Kakinada.
+            </strong>
+
+        </h2>
+
+
+        <p>
+
+            Know a beautiful destination,
+            hidden gem or interesting place
+            that deserves to be discovered?
+
+        </p>
+
+
+        <a
+            href="#"
+            class="gold-button">
+
+            Suggest a Place
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+
+
+    <div class="promote-stats">
+
+
+        <div>
+
+            <strong>
+                01
+            </strong>
+
+            <span>
+                Discover
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                02
+            </strong>
+
+            <span>
+                Explore
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                03
+            </strong>
+
+            <span>
+                Experience
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                ∞
+            </strong>
+
+            <span>
+                Memories
+            </span>
+
+        </div>
+
+
+    </div>
+
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-  <div class="footer-logo">
 
-    <img
-      src="logo.jpg"
-      alt="Kakinada Diaries">
-
-    <p>
-      Everything Kakinada.<br>
-      One Place.
-    </p>
-
-  </div>
+    <div class="footer-main">
 
 
-  <div>
+        <!-- BRAND -->
 
-    <h3>
-      Quick Links
-    </h3>
+        <div class="footer-brand">
 
-    <a href="index.html">Home</a>
-    <a href="businesses.html">Businesses</a>
-    <a href="places.html">Places</a>
-    <a href="food.html">Food</a>
-    <a href="events.html">Events</a>
-    <a href="services.html">Services</a>
-
-  </div>
+            <img
+                src="logo.jpg"
+                alt="Kakinada Diaries">
 
 
-  <div>
+            <p>
 
-    <h3>
-      For Businesses
-    </h3>
+                Everything Kakinada.<br>
+                One Place.
 
-    <a href="#promote">
-      Promote Your Business
-    </a>
-
-    <a href="#">
-      Business Login
-    </a>
-
-    <a href="#">
-      Add Business
-    </a>
-
-    <a href="#">
-      Pricing
-    </a>
-
-  </div>
+            </p>
 
 
-  <div>
-
-    <h3>
-      Support
-    </h3>
-
-    <a href="#">
-      About Us
-    </a>
-
-    <a href="#">
-      Contact Us
-    </a>
-
-    <a href="#">
-      Privacy Policy
-    </a>
-
-    <a href="#">
-      Terms & Conditions
-    </a>
-
-  </div>
+            <div class="socials">
 
 
-  <div>
+                <a href="#">
+                    ◎
+                </a>
 
-    <h3>
-      Contact Us
-    </h3>
 
-    <p>
-      📞 +91 90105 81234
-    </p>
+                <a href="#">
+                    ◉
+                </a>
 
-    <p>
-      ✉ hello@kakinadadiaries.com
-    </p>
 
-    <p>
-      📍 Kakinada, Andhra Pradesh
-    </p>
+                <a href="#">
+                    ▶
+                </a>
 
-  </div>
+
+                <a href="#">
+                    ✉
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="businesses.html">
+                Businesses
+            </a>
+
+
+            <a href="places.html">
+                Places
+            </a>
+
+
+            <a href="food.html">
+                Food
+            </a>
+
+
+            <a href="events.html">
+                Events
+            </a>
+
+
+            <a href="services.html">
+                Services
+            </a>
+
+        </div>
+
+
+
+        <!-- BUSINESS -->
+
+        <div class="footer-column">
+
+            <h3>
+                For Businesses
+            </h3>
+
+
+            <a href="#promote">
+                Promote Your Business
+            </a>
+
+
+            <a href="#">
+                Business Login
+            </a>
+
+
+            <a href="#">
+                Add Business
+            </a>
+
+
+            <a href="#">
+                Pricing
+            </a>
+
+        </div>
+
+
+
+        <!-- SUPPORT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Support
+            </h3>
+
+
+            <a href="#">
+                About Us
+            </a>
+
+
+            <a href="#">
+                Contact Us
+            </a>
+
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+
+            <a href="#">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+
+            <p>
+                📞 +91 90105 81234
+            </p>
+
+
+            <p>
+                ✉ hello@kakinadadiaries.com
+            </p>
+
+
+            <p>
+                📍 Kakinada, Andhra Pradesh
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+
+        <span>
+
+            © 2026 Kakinada Diaries.
+            All Rights Reserved.
+
+        </span>
+
+
+        <span>
+
+            Made with ❤️ for Kakinada
+
+        </span>
+
+
+    </div>
+
 
 </footer>
 
 
-<div class="copyright">
 
-  © 2026 Kakinada Diaries. All Rights Reserved.
-
-</div>
-
-
-<!-- ================= MENU SCRIPT ================= -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const closeMenu = document.getElementById("closeMenu");
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const closeMenu =
+    document.getElementById("closeMenu");
+
 
 if (menuBtn) {
-  menuBtn.addEventListener("click", function () {
-    mobileMenu.classList.add("open");
-  });
+
+    menuBtn.addEventListener(
+        "click",
+        function () {
+
+            mobileMenu.classList.add("open");
+
+        }
+    );
+
 }
+
 
 if (closeMenu) {
-  closeMenu.addEventListener("click", function () {
-    mobileMenu.classList.remove("open");
-  });
+
+    closeMenu.addEventListener(
+        "click",
+        function () {
+
+            mobileMenu.classList.remove("open");
+
+        }
+    );
+
 }
 
-document.querySelectorAll(".mobile-navigation a").forEach(function(link) {
 
-  link.addEventListener("click", function() {
-    mobileMenu.classList.remove("open");
-  });
+document
+    .querySelectorAll(".mobile-navigation a")
+    .forEach(function(link) {
 
-});
+        link.addEventListener(
+            "click",
+            function() {
+
+                mobileMenu.classList.remove("open");
+
+            }
+        );
+
+    });
+
+
+
+/* ================= CAROUSEL ================= */
+
+const cards =
+    document.querySelectorAll(
+        ".destination-card"
+    );
+
+const nextBtn =
+    document.getElementById("nextBtn");
+
+const prevBtn =
+    document.getElementById("prevBtn");
+
+
+let currentIndex = 0;
+
+
+function updateCarousel() {
+
+
+    cards.forEach(function(card, index) {
+
+        card.classList.remove(
+            "active",
+            "left-card",
+            "right-card",
+            "hidden-card"
+        );
+
+
+        if (index === currentIndex) {
+
+            card.classList.add(
+                "active"
+            );
+
+        }
+
+        else if (
+            index ===
+            (currentIndex - 1 + cards.length)
+            % cards.length
+        ) {
+
+            card.classList.add(
+                "left-card"
+            );
+
+        }
+
+        else if (
+            index ===
+            (currentIndex + 1)
+            % cards.length
+        ) {
+
+            card.classList.add(
+                "right-card"
+            );
+
+        }
+
+        else {
+
+            card.classList.add(
+                "hidden-card"
+            );
+
+        }
+
+    });
+
+}
+
+
+if (nextBtn) {
+
+    nextBtn.addEventListener(
+        "click",
+        function() {
+
+            currentIndex =
+                (currentIndex + 1)
+                % cards.length;
+
+            updateCarousel();
+
+        }
+    );
+
+}
+
+
+if (prevBtn) {
+
+    prevBtn.addEventListener(
+        "click",
+        function() {
+
+            currentIndex =
+                (currentIndex - 1 + cards.length)
+                % cards.length;
+
+            updateCarousel();
+
+        }
+    );
+
+}
+
+
+updateCarousel();
+
 
 </script>
 
+
 </body>
+
 </html>
