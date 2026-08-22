@@ -292,6 +292,120 @@ nav a.active{
         margin-top:20px;
     }
 }
+    /* ================= FOOTER ================= */
+
+.site-footer{
+    background:#f8f5ef;
+    border-top:1px solid #e5dfd3;
+}
+
+.footer-main{
+    padding:60px 5% 50px;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr 1.3fr;
+    gap:40px;
+}
+
+.footer-brand img{
+    width:85px;
+    height:85px;
+    object-fit:cover;
+}
+
+.footer-brand p{
+    margin-top:18px;
+    color:#555;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.socials{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.socials a{
+    width:34px;
+    height:34px;
+    border:1px solid #bbb;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#171717;
+    font-size:15px;
+}
+
+.footer-column{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-column h3{
+    font-family:Georgia,serif;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.footer-column a{
+    text-decoration:none;
+    color:#555;
+    font-size:13px;
+}
+
+.footer-column a:hover{
+    color:#c99b38;
+}
+
+.contact p{
+    color:#555;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.footer-bottom{
+    background:#171717;
+    color:#aaa;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+}
+
+
+/* MOBILE FOOTER */
+
+@media(max-width:800px){
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+        gap:35px 25px;
+        padding:45px 25px;
+    }
+
+    .footer-brand{
+        grid-column:1 / -1;
+    }
+
+    .footer-column h3{
+        font-size:16px;
+    }
+
+    .footer-column a{
+        font-size:12px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+        padding:15px 20px;
+    }
+
+}
 </style>
 </head>
 
@@ -558,6 +672,102 @@ nav a.active{
     </button>
 
 </section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+
+            <img src="logo.jpg" alt="Kakinada Diaries">
+
+            <p>
+                Everything Kakinada.<br>
+                One Place.
+            </p>
+
+            <div class="socials">
+                <a href="#">◎</a>
+                <a href="#">◉</a>
+                <a href="#">▶</a>
+                <a href="#">✉</a>
+            </div>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="businesses.html">Businesses</a>
+            <a href="places.html">Places</a>
+            <a href="food.html">Food</a>
+            <a href="events.html">Events</a>
+            <a href="stories.html">Stories</a>
+
+        </div>
+
+
+        <!-- BUSINESSES -->
+        <div class="footer-column">
+
+            <h3>For Businesses</h3>
+
+            <a href="#">Promote Your Business</a>
+            <a href="#">Business Login</a>
+            <a href="#">Add Business</a>
+            <a href="#">Pricing</a>
+
+        </div>
+
+
+        <!-- SUPPORT -->
+        <div class="footer-column">
+
+            <h3>Support</h3>
+
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+
+        </div>
+
+
+        <!-- CONTACT -->
+        <div class="footer-column contact">
+
+            <h3>Contact Us</h3>
+
+            <p>📞 +91 90105 81234</p>
+            <p>✉ hello@kakinadadiaries.com</p>
+            <p>📍 Kakinada, Andhra Pradesh</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Kakinada Diaries. All Rights Reserved.
+        </span>
+
+        <span>
+            Made with ❤️ for Kakinada
+        </span>
+
+    </div>
+
+</footer>
+
 
 </body>
 </html>
