@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Businesses | Kakinada Diaries</title>
+
+    <meta name="description"
+          content="Discover businesses, restaurants, shops, services and local brands in Kakinada.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ================= BUSINESS PAGE ================= */
+
+        .business-page {
+            background: #f8f5ef;
+            min-height: 100vh;
+        }
+
+        .business-hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #151515,
+                    #292929
+                );
+
+            color: white;
+
+            padding: 80px 6% 70px;
+
+            text-align: center;
+        }
+
+        .business-hero .eyebrow {
+            color: #e5bd68;
+        }
+
+        .business-hero h1 {
+            margin-top: 15px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(42px, 7vw, 76px);
+
+            line-height: 1;
+        }
+
+        .business-hero h1 span {
+            color: #e5bd68;
+        }
+
+        .business-hero p {
+            margin: 20px auto 30px;
+
+            max-width: 520px;
+
+            color: #ccc;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* SEARCH */
+
+        .business-search {
+            max-width: 620px;
+
+            margin: auto;
+
+            display: flex;
+
+            background: white;
+
+            border-radius: 50px;
+
+            padding: 6px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.2);
+        }
+
+        .business-search input {
+            flex: 1;
+
+            border: none;
+
+            outline: none;
+
+            padding: 15px 20px;
+
+            font-family: "DM Sans", sans-serif;
+
+            font-size: 14px;
+
+            border-radius: 50px;
+        }
+
+        .business-search button {
+            border: none;
+
+            background: #e5bd68;
+
+            color: #111;
+
+            padding: 0 25px;
+
+            border-radius: 50px;
+
+            font-weight: 700;
+        }
+
+
+        /* CATEGORY FILTERS */
+
+        .business-content {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 55px 5%;
+        }
+
+        .business-section-title {
+            display: flex;
+
+            align-items: end;
+
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+        }
+
+        .business-section-title h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 32px;
+        }
+
+        .business-section-title p {
+            color: #777;
+
+            font-size: 12px;
+        }
+
+        .business-categories {
+            display: flex;
+
+            gap: 10px;
+
+            overflow-x: auto;
+
+            padding-bottom: 10px;
+
+            scrollbar-width: none;
+        }
+
+        .business-categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .business-category {
+            flex: 0 0 auto;
+
+            border: 1px solid #ddd3c3;
+
+            background: #fffdf9;
+
+            padding: 12px 18px;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .business-category:hover,
+        .business-category.active {
+            background: #171717;
+
+            color: white;
+
+            border-color: #171717;
+        }
+
+
+        /* BUSINESS CARDS */
+
+        .business-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+            margin-top: 30px;
+        }
+
+        .business-card {
+            background: #fffdf9;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,.06);
+
+            transition: .3s;
+        }
+
+        .business-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .business-image {
+            height: 210px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .business-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .business-card:hover
+        .business-image img {
+            transform: scale(1.06);
+        }
+
+        .business-tag {
+            position: absolute;
+
+            top: 14px;
+            left: 14px;
+
+            background: rgba(255,255,255,.92);
+
+            color: #171717;
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: .5px;
+        }
+
+        .business-info {
+            padding: 18px;
+        }
+
+        .business-info h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 22px;
+        }
+
+        .business-category-name {
+            margin-top: 5px;
+
+            color: #b48327;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .business-location {
+            margin-top: 12px;
+
+            color: #777;
+
+            font-size: 11px;
+        }
+
+        .business-bottom {
+            margin-top: 16px;
+
+            padding-top: 13px;
+
+            border-top: 1px solid #eee7dc;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .business-rating {
+            color: #b48327;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        .business-view {
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        /* ADD BUSINESS */
+
+        .add-business {
+            margin-top: 60px;
+
+            padding: 45px;
+
+            border-radius: 22px;
+
+            background: #171717;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .add-business h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 32px;
+        }
+
+        .add-business p {
+            margin-top: 8px;
+
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+        .add-business a {
+            flex: 0 0 auto;
+
+            background: #e5bd68;
+
+            color: #111;
+
+            padding: 14px 22px;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            .business-hero {
+                padding: 55px 20px 50px;
+            }
+
+            .business-hero h1 {
+                font-size: 43px;
+            }
+
+            .business-search {
+                height: 52px;
+            }
+
+            .business-search input {
+                min-width: 0;
+
+                padding: 10px 15px;
+            }
+
+            .business-search button {
+                padding: 0 18px;
+            }
+
+            .business-content {
+                padding: 40px 15px;
+            }
+
+            .business-section-title {
+                display: block;
+            }
+
+            .business-section-title p {
+                margin-top: 5px;
+            }
+
+            .business-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+            .business-image {
+                height: 145px;
+            }
+
+            .business-info {
+                padding: 12px;
+            }
+
+            .business-info h3 {
+                font-size: 17px;
+            }
+
+            .business-location {
+                font-size: 9px;
+            }
+
+            .business-bottom {
+                margin-top: 12px;
+
+                padding-top: 10px;
+            }
+
+            .business-rating {
+                font-size: 10px;
+            }
+
+            .business-view {
+                font-size: 9px;
+            }
+
+            .add-business {
+                margin-top: 40px;
+
+                padding: 25px;
+
+                display: block;
+
+                text-align: center;
+            }
+
+            .add-business h2 {
+                font-size: 26px;
+            }
+
+            .add-business a {
+                display: inline-block;
+
+                margin-top: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <a href="index.html">
+
+            <img
+                src="logo.jpg"
+                alt="Kakinada Diaries">
+
+        </a>
+
+    </div>
+
+
+    <nav class="desktop-nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="businesses.html"
+           class="active">
+            Businesses
+        </a>
+
+        <a href="places.html">
+            Places
+        </a>
+
+        <a href="food.html">
+            Food
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="stories.html">
+            Stories
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+        <button
+            class="icon-btn">
+            ⌕
+        </button>
+
+        <button
+            class="icon-btn">
+            ☼
+        </button>
+
+        <a
+            href="#promote"
+            class="promote-btn">
+
+            Promote Your Business
+
+        </a>
+
+
+        <button
+            class="mobile-menu-btn"
+            id="menuBtn">
+
+            ☰
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MOBILE MENU ================= -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu">
+
+
+    <button
+        class="close-menu"
+        id="closeMenu">
+
+        ×
+
+    </button>
+
+
+    <div class="mobile-brand">
+
+        <img
+            src="logo.jpg"
+            alt="Kakinada Diaries">
+
+        <span>
+            EXPLORE | DISCOVER | EXPERIENCE
+        </span>
+
+    </div>
+
+
+    <div class="mobile-menu-title">
+
+        <small>
+            Explore
+        </small>
+
+        <h2>
+            Kakinada
+        </h2>
+
+        <div class="title-line"></div>
+
+    </div>
+
+
+    <nav class="mobile-navigation">
+
+        <a href="index.html">
+
+            <span class="menu-icon">⌂</span>
+
+            <span>Home</span>
+
+            <b>→</b>
+
+        </a>
+
+
+        <a href="businesses.html">
+
+            <span class="menu-icon">▱</span>
+
+            <span>Businesses</span>
+
+            <b>→</b>
+
+        </a>
+
+
+        <a href="places.html">
+
+            <span class="menu-icon">⌖</span>
+
+            <span>Places</span>
+
+            <b>→</b>
+
+        </a>
+
+
+        <a href="food.html">
+
+            <span class="menu-icon">♜</span>
+
+            <span>Food</span>
+
+            <b>→</b>
+
+        </a>
+
+
+        <a href="events.html">
+
+            <span class="menu-icon">▣</span>
+
+            <span>Events</span>
+
+            <b>→</b>
+
+        </a>
+
+
+        <a href="stories.html">
+
+            <span class="menu-icon">▤</span>
+
+            <span>Stories</span>
+
+            <b>→</b>
+
+        </a>
+
+
+        <a href="services.html">
+
+            <span class="menu-icon">⚙</span>
+
+            <span>Services</span>
+
+            <b>→</b>
+
+        </a>
+
+    </nav>
+
+
+    <a
+        href="#promote"
+        class="mobile-promote">
+
+        <div class="promote-icon">
+            📣
+        </div>
+
+        <div class="promote-text">
+
+            <strong>
+                Promote Your Business
+            </strong>
+
+            <span>
+                Get featured and reach
+                thousands of Kakinada people.
+            </span>
+
+        </div>
+
+        <div class="promote-arrow">
+            →
+        </div>
+
+    </a>
+
+
+    <div class="mobile-connect">
+
+        <div class="connect-title">
+
+            <span></span>
+
+            CONNECT WITH US
+
+            <span></span>
+
+        </div>
+
+
+        <div class="connect-links">
+
+            <a href="#">
+                <span>◎</span>
+                Instagram
+            </a>
+
+            <a href="#">
+                <span>◉</span>
+                WhatsApp
+            </a>
+
+            <a href="#">
+                <span>✉</span>
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= BUSINESS PAGE ================= -->
+
+<main class="business-page">
+
+
+    <!-- HERO -->
+
+    <section class="business-hero">
+
+        <span class="eyebrow">
+            DISCOVER LOCAL
+        </span>
+
+        <h1>
+            Kakinada
+            <span>Businesses</span>
+        </h1>
+
+        <p>
+            Discover local businesses, restaurants,
+            shops, services and brands around Kakinada.
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="business-search">
+
+            <input
+                type="text"
+                id="businessSearch"
+                placeholder="Search businesses...">
+
+            <button>
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENT -->
+
+    <section class="business-content">
+
+
+        <!-- CATEGORIES -->
+
+        <div class="business-section-title">
+
+            <div>
+
+                <span class="eyebrow">
+                    BROWSE BY CATEGORY
+                </span>
+
+                <h2>
+                    Find what you need
+                </h2>
+
+            </div>
+
+            <p>
+                Local businesses in one place
+            </p>
+
+        </div>
+
+
+        <div class="business-categories">
+
+            <button class="business-category active">
+                All
+            </button>
+
+            <button class="business-category">
+                Restaurants
+            </button>
+
+            <button class="business-category">
+                Cafés
+            </button>
+
+            <button class="business-category">
+                Shopping
+            </button>
+
+            <button class="business-category">
+                Salons
+            </button>
+
+            <button class="business-category">
+                Hotels
+            </button>
+
+            <button class="business-category">
+                Services
+            </button>
+
+        </div>
+
+
+        <!-- FEATURED BUSINESSES -->
+
+        <div
+            class="business-grid"
+            id="businessGrid">
+
+
+            <!-- BUSINESS 1 -->
+
+            <article class="business-card">
+
+                <div class="business-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85"
+                        alt="Restaurant">
+
+                    <span class="business-tag">
+                        FEATURED
+                    </span>
+
+                </div>
+
+                <div class="business-info">
+
+                    <h3>
+                        The Coastal Kitchen
+                    </h3>
+
+                    <div class="business-category-name">
+                        Restaurant
+                    </div>
+
+                    <div class="business-location">
+                        📍 Main Road, Kakinada
+                    </div>
+
+                    <div class="business-bottom">
+
+                        <span class="business-rating">
+                            ★ 4.8
+                        </span>
+
+                        <span class="business-view">
+                            View Details →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BUSINESS 2 -->
+
+            <article class="business-card">
+
+                <div class="business-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=85"
+                        alt="Shopping">
+
+                </div>
+
+                <div class="business-info">
+
+                    <h3>
+                        Urban Style
+                    </h3>
+
+                    <div class="business-category-name">
+                        Shopping
+                    </div>
+
+                    <div class="business-location">
+                        📍 Sarpavaram, Kakinada
+                    </div>
+
+                    <div class="business-bottom">
+
+                        <span class="business-rating">
+                            ★ 4.6
+                        </span>
+
+                        <span class="business-view">
+                            View Details →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BUSINESS 3 -->
+
+            <article class="business-card">
+
+                <div class="business-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85"
+                        alt="Salon">
+
+                </div>
+
+                <div class="business-info">
+
+                    <h3>
+                        The Hair Studio
+                    </h3>
+
+                    <div class="business-category-name">
+                        Salon
+                    </div>
+
+                    <div class="business-location">
+                        📍 Bhanugudi, Kakinada
+                    </div>
+
+                    <div class="business-bottom">
+
+                        <span class="business-rating">
+                            ★ 4.7
+                        </span>
+
+                        <span class="business-view">
+                            View Details →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BUSINESS 4 -->
+
+            <article class="business-card">
+
+                <div class="business-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85"
+                        alt="Hotel">
+
+                </div>
+
+                <div class="business-info">
+
+                    <h3>
+                        Coastal Stay
+                    </h3>
+
+                    <div class="business-category-name">
+                        Hotel
+                    </div>
+
+                    <div class="business-location">
+                        📍 Beach Road, Kakinada
+                    </div>
+
+                    <div class="business-bottom">
+
+                        <span class="business-rating">
+                            ★ 4.5
+                        </span>
+
+                        <span class="business-view">
+                            View Details →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BUSINESS 5 -->
+
+            <article class="business-card">
+
+                <div class="business-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=85"
+                        alt="Store">
+
+                </div>
+
+                <div class="business-info">
+
+                    <h3>
+                        Local Market
+                    </h3>
+
+                    <div class="business-category-name">
+                        Shopping
+                    </div>
+
+                    <div class="business-location">
+                        📍 Jagannaickpur, Kakinada
+                    </div>
+
+                    <div class="business-bottom">
+
+                        <span class="business-rating">
+                            ★ 4.4
+                        </span>
+
+                        <span class="business-view">
+                            View Details →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BUSINESS 6 -->
+
+            <article class="business-card">
+
+                <div class="business-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85"
+                        alt="Services">
+
+                </div>
+
+                <div class="business-info">
+
+                    <h3>
+                        Kakinada Services
+                    </h3>
+
+                    <div class="business-category-name">
+                        Services
+                    </div>
+
+                    <div class="business-location">
+                        📍 Kakinada City
+                    </div>
+
+                    <div class="business-bottom">
+
+                        <span class="business-rating">
+                            ★ 4.5
+                        </span>
+
+                        <span class="business-view">
+                            View Details →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- ADD BUSINESS -->
+
+        <div
+            class="add-business"
+            id="promote">
+
+            <div>
+
+                <h2>
+                    Is your business
+                    in Kakinada?
+                </h2>
+
+                <p>
+                    Get discovered by thousands
+                    of people looking for local businesses.
+                </p>
+
+            </div>
+
+            <a href="#">
+                Add Your Business →
+            </a>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="logo.jpg"
+                alt="Kakinada Diaries">
+
+            <p>
+                Everything Kakinada. One Place.
+            </p>
+
+            <div class="socials">
+
+                <a href="#">◎</a>
+                <a href="#">◉</a>
+                <a href="#">▶</a>
+                <a href="#">✉</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="places.html">
+                Places
+            </a>
+
+            <a href="food.html">
+                Food
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Businesses
+            </h3>
+
+            <a href="#">
+                Restaurants
+            </a>
+
+            <a href="#">
+                Shopping
+            </a>
+
+            <a href="#">
+                Salons
+            </a>
+
+            <a href="#">
+                Services
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Support
+            </h3>
+
+            <a href="#">
+                About Us
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Kakinada, Andhra Pradesh
+            </p>
+
+            <p>
+                hello@kakinadadiaries.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Kakinada Diaries
+        </span>
+
+        <span>
+            Made with ❤️ for Kakinada
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const closeMenu =
+    document.getElementById("closeMenu");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+
+if (menuBtn) {
+
+    menuBtn.addEventListener(
+        "click",
+        () => {
+
+            mobileMenu.classList.add("open");
+
+        }
+    );
+
+}
+
+
+if (closeMenu) {
+
+    closeMenu.addEventListener(
+        "click",
+        () => {
+
+            mobileMenu.classList.remove("open");
+
+        }
+    );
+
+}
+
+
+document
+    .querySelectorAll(".mobile-menu a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                mobileMenu.classList.remove("open");
+
+            }
+        );
+
+    });
+
+
+/* ================= SEARCH ================= */
+
+const searchInput =
+    document.getElementById("businessSearch");
+
+const businessCards =
+    document.querySelectorAll(".business-card");
+
+
+if (searchInput) {
+
+    searchInput.addEventListener(
+        "input",
+        () => {
+
+            const search =
+                searchInput.value
+                    .toLowerCase()
+                    .trim();
+
+
+            businessCards.forEach(card => {
+
+                const text =
+                    card.innerText.toLowerCase();
+
+
+                if (
+                    text.includes(search)
+                    ||
+                    search === ""
+                ) {
+
+                    card.style.display =
+                        "";
+
+                } else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            });
+
+        }
+    );
+
+}
+
+
+/* ================= CATEGORY BUTTONS ================= */
+
+const categoryButtons =
+    document.querySelectorAll(
+        ".business-category"
+    );
+
+
+categoryButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            categoryButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+            button.classList.add(
+                "active"
+            );
+
+
+            const category =
+                button.innerText
+                    .toLowerCase();
+
+
+            businessCards.forEach(card => {
+
+                if (
+                    category === "all"
+                    ||
+                    card.innerText
+                        .toLowerCase()
+                        .includes(category)
+                ) {
+
+                    card.style.display =
+                        "";
+
+                } else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            });
+
+        }
+    );
+
+});
+
+</script>
+
+
+</body>
+
+</html>
