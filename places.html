@@ -1,1388 +1,726 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kakinada Places | Kakinada Diaries</title>
 
-<title>Kakinada Places | Kakinada Diaries</title>
-
-<style>
-
-/* ================= RESET ================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:"DM Sans",Arial,sans-serif;
-    background:#f8f5ef;
-    color:#171717;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-
-/* ================= HEADER ================= */
-
-.header{
-    height:72px;
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 5%;
-    border-bottom:1px solid #eee;
-    position:relative;
-    z-index:100;
-}
-
-.logo-area img{
-    width:55px;
-    height:55px;
-    object-fit:cover;
-}
-
-.desktop-nav{
-    display:flex;
-    align-items:center;
-    gap:27px;
-}
-
-.desktop-nav a{
-    font-size:13px;
-    color:#222;
-    padding:8px 0;
-}
-
-.desktop-nav a.active{
-    color:#c99b38;
-    border-bottom:2px solid #c99b38;
-}
-
-.header-actions{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.icon-btn{
-    width:38px;
-    height:38px;
-    border:0;
-    background:transparent;
-    font-size:17px;
-}
-
-.promote-btn{
-    background:#171717;
-    color:white;
-    border-radius:25px;
-    padding:12px 20px;
-    font-size:11px;
-    font-weight:600;
-}
-
-.mobile-menu-btn{
-    display:none;
-    width:44px;
-    height:44px;
-    border:none;
-    border-radius:50%;
-    background:#171717;
-    color:white;
-    font-size:22px;
-}
-
-
-/* ================= MOBILE MENU ================= */
-
-.mobile-menu{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:1000;
-    background:#f8f5ef;
-    overflow-y:auto;
-    padding:32px 24px 40px;
-}
-
-.mobile-menu.open{
-    display:block;
-}
-
-.close-menu{
-    position:absolute;
-    top:22px;
-    right:24px;
-    width:44px;
-    height:44px;
-    border:none;
-    border-radius:50%;
-    background:#171717;
-    color:white;
-    font-size:27px;
-}
-
-.mobile-brand{
-    text-align:center;
-    padding-top:55px;
-}
-
-.mobile-brand img{
-    width:125px;
-    height:125px;
-    object-fit:cover;
-}
-
-.mobile-brand span{
-    display:block;
-    margin-top:12px;
-    color:#a6874b;
-    font-size:10px;
-    letter-spacing:3px;
-}
-
-.mobile-menu-title{
-    margin-top:38px;
-    margin-bottom:25px;
-}
-
-.mobile-menu-title small{
-    color:#bd9238;
-    font-size:13px;
-    font-style:italic;
-}
-
-.mobile-menu-title h2{
-    font-family:Georgia,serif;
-    font-size:42px;
-    margin-top:3px;
-}
-
-.title-line{
-    width:180px;
-    height:4px;
-    background:#c99b38;
-    margin-top:12px;
-}
-
-.mobile-navigation{
-    border-top:1px solid #ddd4c5;
-}
-
-.mobile-navigation a{
-    display:grid;
-    grid-template-columns:60px 1fr 40px;
-    align-items:center;
-    min-height:82px;
-    border-bottom:1px solid #ddd4c5;
-    font-family:Georgia,serif;
-    font-size:25px;
-}
-
-.mobile-navigation .menu-icon{
-    font-family:Arial,sans-serif;
-    font-size:27px;
-}
-
-.mobile-navigation b{
-    color:#c99b38;
-    font-family:Arial,sans-serif;
-    font-size:31px;
-    font-weight:400;
-    text-align:right;
-}
-
-.mobile-promote{
-    display:block;
-    width:max-content;
-    margin:30px auto 0;
-    background:#171717;
-    color:white;
-    padding:14px 25px;
-    border-radius:30px;
-    font-family:Arial,sans-serif;
-    font-size:13px;
-}
-
-
-/* ================= HERO ================= */
-
-.hero{
-    background:#171717;
-    color:white;
-    text-align:center;
-    padding:70px 20px 62px;
-}
-
-.eyebrow{
-    color:#c8a35b;
-    font-size:11px;
-    letter-spacing:3px;
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-family:Georgia,serif;
-    font-size:58px;
-    line-height:1.1;
-}
-
-.hero h1 span{
-    color:#d4ad57;
-}
-
-.hero p{
-    max-width:620px;
-    margin:18px auto 0;
-    color:#c9c9c9;
-    font-size:14px;
-    line-height:1.7;
-}
-
-
-/* ================= CATEGORY ================= */
-
-.category-section{
-    padding:50px 5% 30px;
-}
-
-.section-title{
-    font-family:Georgia,serif;
-    font-size:38px;
-    margin-bottom:25px;
-}
-
-.categories{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.category{
-    padding:9px 18px;
-    border-radius:22px;
-    background:white;
-    border:1px solid #e5dfd5;
-    font-size:12px;
-}
-
-.category.active{
-    background:#171717;
-    color:white;
-    border-color:#171717;
-}
-
-
-/* ================= PLACES ================= */
-
-.places{
-    padding:20px 5% 70px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-}
-
-.card{
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
-    border:1px solid #eee6da;
-    box-shadow:0 5px 20px rgba(0,0,0,.04);
-}
-
-.card img{
-    width:100%;
-    height:190px;
-    display:block;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:18px 16px 20px;
-}
-
-.tag{
-    color:#b28b3d;
-    font-size:9px;
-    letter-spacing:1.5px;
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.card h2{
-    font-family:Georgia,serif;
-    font-size:21px;
-    line-height:1.15;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#777;
-    font-size:12px;
-    line-height:1.6;
-    min-height:57px;
-}
-
-.location{
-    color:#777;
-    font-size:11px;
-    margin-top:10px;
-}
-
-.view{
-    display:inline-block;
-    margin-top:16px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-.view span{
-    color:#bd9238;
-    font-size:17px;
-    margin-left:6px;
-}
-
-
-/* ================= CTA ================= */
-
-.cta{
-    margin:0 5% 70px;
-    background:#171717;
-    color:white;
-    border-radius:18px;
-    padding:35px 28px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:25px;
-}
-
-.cta h2{
-    font-family:Georgia,serif;
-    font-size:28px;
-    margin-bottom:8px;
-}
-
-.cta p{
-    color:#aaa;
-    font-size:12px;
-}
-
-.cta button{
-    border:none;
-    background:#e3ba5e;
-    color:#171717;
-    padding:13px 20px;
-    border-radius:25px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-
-/* ================= FOOTER ================= */
-
-.site-footer{
-    border-top:1px solid #e5dfd3;
-    background:#f8f5ef;
-}
-
-.footer-main{
-    padding:50px 5%;
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr 1fr 1.3fr;
-    gap:35px;
-}
-
-.footer-brand img{
-    width:80px;
-    height:80px;
-    object-fit:cover;
-}
-
-.footer-brand p{
-    margin-top:15px;
-    color:#555;
-    font-size:13px;
-    line-height:1.6;
-}
-
-.socials{
-    display:flex;
-    gap:8px;
-    margin-top:18px;
-}
-
-.socials a{
-    width:32px;
-    height:32px;
-    border:1px solid #ccc;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
-}
-
-.footer-column{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.footer-column h3{
-    font-family:Georgia,serif;
-    font-size:16px;
-    margin-bottom:7px;
-}
-
-.footer-column a,
-.footer-column p{
-    color:#555;
-    font-size:12px;
-    line-height:1.5;
-}
-
-.footer-bottom{
-    background:#171717;
-    color:#aaa;
-    padding:14px 5%;
-    display:flex;
-    justify-content:space-between;
-    font-size:10px;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:800px){
-
-    .header{
-        height:68px;
-        padding:0 15px;
-    }
-
-    .logo-area img{
-        width:52px;
-        height:52px;
-    }
-
-    .desktop-nav,
-    .header-actions{
-        display:none;
-    }
-
-    .mobile-menu-btn{
-        display:block;
-    }
-
-    .hero{
-        padding:55px 20px 50px;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:13px;
-    }
-
-    .category-section{
-        padding:40px 20px 20px;
-    }
-
-    .section-title{
-        font-size:30px;
-    }
-
-    .categories{
-        gap:8px;
-    }
-
-    .category{
-        padding:8px 14px;
-    }
-
-    .places{
-        padding:15px 20px 50px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-        gap:18px;
-    }
-
-    .card img{
-        height:210px;
-    }
-
-    .card-content{
-        padding:18px;
-    }
-
-    .cta{
-        margin:0 20px 50px;
-        padding:28px 22px;
-        display:block;
-    }
-
-    .cta button{
-        margin-top:20px;
-    }
-
-    .footer-main{
-        grid-template-columns:1fr 1fr;
-        padding:45px 25px;
-        gap:30px 22px;
-    }
-
-    .footer-brand{
-        grid-column:1 / -1;
-    }
-
-    .footer-bottom{
-        flex-direction:column;
-        text-align:center;
-        gap:7px;
-    }
-
-}
-
-
-/* ================= SMALL MOBILE ================= */
-
-@media(max-width:430px){
-
-    .mobile-brand img{
-        width:110px;
-        height:110px;
-    }
-
-    .mobile-menu-title h2{
-        font-size:38px;
-    }
-
-    .mobile-navigation a{
-        min-height:72px;
-        font-size:22px;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
-}
-
-</style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-
 
 <!-- ================= HEADER ================= -->
 
 <header class="header">
 
-    <div class="logo-area">
+  <div class="logo-area">
+    <a href="index.html">
+      <img src="logo.jpg" alt="Kakinada Diaries">
+    </a>
+  </div>
 
-        <a href="index.html">
+  <!-- DESKTOP NAV -->
 
-            <img
-                src="logo.jpg"
-                alt="Kakinada Diaries">
+  <nav class="desktop-nav">
 
-        </a>
+    <a href="index.html">
+      Home
+    </a>
 
-    </div>
+    <a href="businesses.html">
+      Businesses
+    </a>
 
+    <a href="places.html" class="active">
+      Places
+    </a>
 
-    <nav class="desktop-nav">
+    <a href="food.html">
+      Food
+    </a>
 
-        <a href="index.html">
-            Home
-        </a>
+    <a href="events.html">
+      Events
+    </a>
 
-        <a href="businesses.html">
-            Businesses
-        </a>
+    <a href="services.html">
+      Services
+    </a>
 
-        <a href="places.html" class="active">
-            Places
-        </a>
+  </nav>
 
-        <a href="food.html">
-            Food
-        </a>
+  <div class="header-actions">
 
-        <a href="events.html">
-            Events
-        </a>
-
-        <a href="services.html">
-            Services
-        </a>
-
-    </nav>
-
-
-    <div class="header-actions">
-
-        <button class="icon-btn">
-            ⌕
-        </button>
-
-        <button class="icon-btn">
-            ◌
-        </button>
-
-        <a href="#" class="promote-btn">
-            Promote Your<br>
-            Business
-        </a>
-
-    </div>
-
-
-    <button
-        class="mobile-menu-btn"
-        id="menuBtn">
-
-        ☰
-
+    <button class="icon-btn">
+      ⌕
     </button>
 
-</header>
+    <button class="icon-btn">
+      ☼
+    </button>
 
+    <a href="#promote" class="promote-btn">
+      Promote Your Business
+    </a>
+
+    <button
+      class="mobile-menu-btn"
+      id="menuBtn">
+      ☰
+    </button>
+
+  </div>
+
+</header>
 
 
 <!-- ================= MOBILE MENU ================= -->
 
 <div
-    class="mobile-menu"
-    id="mobileMenu">
+  class="mobile-menu"
+  id="mobileMenu">
+
+  <!-- CLOSE -->
+
+  <button
+    class="close-menu"
+    id="closeMenu">
+    ×
+  </button>
 
 
-    <button
-        class="close-menu"
-        id="closeMenu">
+  <!-- BRAND -->
 
-        ×
+  <div class="mobile-brand">
 
-    </button>
+    <img
+      src="logo.jpg"
+      alt="Kakinada Diaries">
 
+    <span>
+      EXPLORE | DISCOVER | EXPERIENCE
+    </span>
 
-    <div class="mobile-brand">
-
-        <img
-            src="logo.jpg"
-            alt="Kakinada Diaries">
-
-        <span>
-            EXPLORE | DISCOVER | EXPERIENCE
-        </span>
-
-    </div>
+  </div>
 
 
-    <div class="mobile-menu-title">
+  <!-- TITLE -->
 
-        <small>
-            Explore
-        </small>
+  <div class="mobile-menu-title">
 
-        <h2>
-            Kakinada
-        </h2>
+    <small>
+      Explore
+    </small>
 
-        <div class="title-line"></div>
+    <h2>
+      Kakinada
+    </h2>
 
-    </div>
+    <div class="title-line"></div>
 
-
-    <nav class="mobile-navigation">
-
-
-        <a href="index.html">
-
-            <span class="menu-icon">
-                ⌂
-            </span>
-
-            <span>
-                Home
-            </span>
-
-            <b>
-                →
-            </b>
-
-        </a>
+  </div>
 
 
-        <a href="businesses.html">
+  <!-- NAVIGATION -->
 
-            <span class="menu-icon">
-                ▱
-            </span>
+  <nav class="mobile-navigation">
 
-            <span>
-                Businesses
-            </span>
+    <a href="index.html">
 
-            <b>
-                →
-            </b>
+      <span class="menu-icon">⌂</span>
 
-        </a>
+      <span>Home</span>
 
-
-        <a href="places.html">
-
-            <span class="menu-icon">
-                ⊕
-            </span>
-
-            <span>
-                Places
-            </span>
-
-            <b>
-                →
-            </b>
-
-        </a>
-
-
-        <a href="food.html">
-
-            <span class="menu-icon">
-                ♜
-            </span>
-
-            <span>
-                Food
-            </span>
-
-            <b>
-                →
-            </b>
-
-        </a>
-
-
-        <a href="events.html">
-
-            <span class="menu-icon">
-                □
-            </span>
-
-            <span>
-                Events
-            </span>
-
-            <b>
-                →
-            </b>
-
-        </a>
-
-
-        <a href="services.html">
-
-            <span class="menu-icon">
-                ▤
-            </span>
-
-            <span>
-                Services
-            </span>
-
-            <b>
-                →
-            </b>
-
-        </a>
-
-
-    </nav>
-
-
-    <a
-        href="#"
-        class="mobile-promote">
-
-        Promote Your Business
+      <b>→</b>
 
     </a>
 
 
-</div>
+    <a href="businesses.html">
 
+      <span class="menu-icon">▱</span>
+
+      <span>Businesses</span>
+
+      <b>→</b>
+
+    </a>
+
+
+    <a href="places.html">
+
+      <span class="menu-icon">⊕</span>
+
+      <span>Places</span>
+
+      <b>→</b>
+
+    </a>
+
+
+    <a href="food.html">
+
+      <span class="menu-icon">♜</span>
+
+      <span>Food</span>
+
+      <b>→</b>
+
+    </a>
+
+
+    <a href="events.html">
+
+      <span class="menu-icon">□</span>
+
+      <span>Events</span>
+
+      <b>→</b>
+
+    </a>
+
+
+    <a href="services.html">
+
+      <span class="menu-icon">▤</span>
+
+      <span>Services</span>
+
+      <b>→</b>
+
+    </a>
+
+  </nav>
+
+
+  <!-- PROMOTE -->
+
+  <a
+    href="#promote"
+    class="mobile-promote">
+
+    <div class="promote-icon">
+      📣
+    </div>
+
+    <div class="promote-text">
+
+      <strong>
+        Promote Your Business
+      </strong>
+
+      <span>
+        Get featured and reach thousands of Kakinada people.
+      </span>
+
+    </div>
+
+    <div class="promote-arrow">
+      →
+    </div>
+
+  </a>
+
+
+  <!-- CONNECT -->
+
+  <div class="mobile-connect">
+
+    <div class="connect-title">
+
+      <span>•</span>
+
+      CONNECT WITH US
+
+      <span>•</span>
+
+    </div>
+
+
+    <div class="connect-links">
+
+      <a href="#">
+        <span>◎</span>
+        Instagram
+      </a>
+
+      <a href="#">
+        <span>◉</span>
+        WhatsApp
+      </a>
+
+      <a href="#">
+        <span>✉</span>
+        Email
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
 
 
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
-    <div class="eyebrow">
-        DISCOVER KAKINADA
-    </div>
+  <div class="eyebrow">
+    DISCOVER KAKINADA
+  </div>
 
-    <h1>
-        Kakinada <span>Places</span>
-    </h1>
+  <h1>
+    Kakinada <span>Places</span>
+  </h1>
 
-    <p>
-        Explore beautiful beaches, peaceful destinations,
-        famous landmarks and hidden gems around Kakinada.
-    </p>
+  <p>
+    Explore beautiful beaches, peaceful destinations,
+    famous landmarks and hidden gems around Kakinada.
+  </p>
 
 </section>
-
 
 
 <!-- ================= CATEGORIES ================= -->
 
 <section class="category-section">
 
-    <div class="eyebrow">
-        EXPLORE BY TYPE
+  <div class="eyebrow">
+    EXPLORE BY TYPE
+  </div>
+
+  <h2 class="section-title">
+    Find your next destination
+  </h2>
+
+  <div class="categories">
+
+    <div class="category active">
+      All
     </div>
 
-    <h2 class="section-title">
-        Find your next destination
-    </h2>
-
-
-    <div class="categories">
-
-        <div class="category active">
-            All
-        </div>
-
-        <div class="category">
-            Beaches
-        </div>
-
-        <div class="category">
-            Nature
-        </div>
-
-        <div class="category">
-            Temples
-        </div>
-
-        <div class="category">
-            Landmarks
-        </div>
-
-        <div class="category">
-            Tourist Spots
-        </div>
-
+    <div class="category">
+      Beaches
     </div>
+
+    <div class="category">
+      Nature
+    </div>
+
+    <div class="category">
+      Temples
+    </div>
+
+    <div class="category">
+      Landmarks
+    </div>
+
+    <div class="category">
+      Tourist Spots
+    </div>
+
+  </div>
 
 </section>
-
 
 
 <!-- ================= PLACES ================= -->
 
 <section class="places">
 
-    <div class="grid">
+  <div class="grid">
 
 
-        <!-- 1 -->
+    <!-- 1 -->
 
-        <article class="card">
+    <article class="card">
 
-            <img
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
-                alt="Kakinada Beach">
+      <img
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+        alt="Kakinada Beach">
 
-            <div class="card-content">
+      <div class="card-content">
 
-                <div class="tag">
-                    BEACH
-                </div>
+        <div class="tag">
+          BEACH
+        </div>
 
-                <h2>
-                    Kakinada Beach
-                </h2>
+        <h2>
+          Kakinada Beach
+        </h2>
 
-                <p>
-                    Enjoy the sea breeze, beautiful
-                    sunsets and peaceful coastal views.
-                </p>
+        <p>
+          Enjoy the sea breeze, beautiful sunsets
+          and peaceful coastal views.
+        </p>
 
-                <div class="location">
-                    📍 Kakinada
-                </div>
+        <div class="location">
+          📍 Kakinada
+        </div>
 
-                <a href="#" class="view">
-                    View Details
-                    <span>→</span>
-                </a>
+        <a href="#" class="view">
+          View Details <span>→</span>
+        </a>
 
-            </div>
+      </div>
 
-        </article>
+    </article>
 
 
+    <!-- 2 -->
 
-        <!-- 2 -->
+    <article class="card">
 
-        <article class="card">
+      <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+        alt="Coringa Wildlife Sanctuary">
 
-            <img
-                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80"
-                alt="Coringa Wildlife Sanctuary">
+      <div class="card-content">
 
-            <div class="card-content">
+        <div class="tag">
+          NATURE
+        </div>
 
-                <div class="tag">
-                    NATURE
-                </div>
+        <h2>
+          Coringa Wildlife Sanctuary
+        </h2>
 
-                <h2>
-                    Coringa Wildlife Sanctuary
-                </h2>
+        <p>
+          Discover mangrove forests, wildlife
+          and the natural beauty near Kakinada.
+        </p>
 
-                <p>
-                    Discover mangrove forests, wildlife
-                    and the natural beauty near Kakinada.
-                </p>
+        <div class="location">
+          📍 Coringa
+        </div>
 
-                <div class="location">
-                    📍 Coringa
-                </div>
+        <a href="#" class="view">
+          View Details <span>→</span>
+        </a>
 
-                <a href="#" class="view">
-                    View Details
-                    <span>→</span>
-                </a>
+      </div>
 
-            </div>
+    </article>
 
-        </article>
 
+    <!-- 3 -->
 
+    <article class="card">
 
-        <!-- 3 -->
+      <img
+        src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80"
+        alt="Coringa Bridge">
 
-        <article class="card">
+      <div class="card-content">
 
-            <img
-                src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
-                alt="Coringa Bridge">
+        <div class="tag">
+          LANDMARK
+        </div>
 
-            <div class="card-content">
+        <h2>
+          Coringa Bridge
+        </h2>
 
-                <div class="tag">
-                    LANDMARK
-                </div>
+        <p>
+          A beautiful destination surrounded by
+          scenic views and peaceful surroundings.
+        </p>
 
-                <h2>
-                    Coringa Bridge
-                </h2>
+        <div class="location">
+          📍 Kakinada
+        </div>
 
-                <p>
-                    A beautiful destination surrounded by
-                    scenic views and peaceful surroundings.
-                </p>
+        <a href="#" class="view">
+          View Details <span>→</span>
+        </a>
 
-                <div class="location">
-                    📍 Kakinada
-                </div>
+      </div>
 
-                <a href="#" class="view">
-                    View Details
-                    <span>→</span>
-                </a>
+    </article>
 
-            </div>
 
-        </article>
+    <!-- 4 -->
 
+    <article class="card">
 
+      <img
+        src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
+        alt="Local Temples">
 
-        <!-- 4 -->
+      <div class="card-content">
 
-        <article class="card">
+        <div class="tag">
+          TEMPLE
+        </div>
 
-            <img
-                src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80"
-                alt="Local Temples">
+        <h2>
+          Local Temples
+        </h2>
 
-            <div class="card-content">
+        <p>
+          Explore the spiritual and cultural
+          places around Kakinada.
+        </p>
 
-                <div class="tag">
-                    TEMPLE
-                </div>
+        <div class="location">
+          📍 Kakinada
+        </div>
 
-                <h2>
-                    Local Temples
-                </h2>
+        <a href="#" class="view">
+          View Details <span>→</span>
+        </a>
 
-                <p>
-                    Explore the spiritual and cultural
-                    places around Kakinada.
-                </p>
+      </div>
 
-                <div class="location">
-                    📍 Kakinada
-                </div>
+    </article>
 
-                <a href="#" class="view">
-                    View Details
-                    <span>→</span>
-                </a>
 
-            </div>
+    <!-- 5 -->
 
-        </article>
+    <article class="card">
 
+      <img
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+        alt="Hope Island">
 
+      <div class="card-content">
 
-        <!-- 5 -->
+        <div class="tag">
+          TOURIST SPOT
+        </div>
 
-        <article class="card">
+        <h2>
+          Hope Island
+        </h2>
 
-            <img
-                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
-                alt="Hope Island">
+        <p>
+          Experience the calm waters and scenic
+          beauty of this coastal destination.
+        </p>
 
-            <div class="card-content">
+        <div class="location">
+          📍 Kakinada Coast
+        </div>
 
-                <div class="tag">
-                    TOURIST SPOT
-                </div>
+        <a href="#" class="view">
+          View Details <span>→</span>
+        </a>
 
-                <h2>
-                    Hope Island
-                </h2>
+      </div>
 
-                <p>
-                    Experience the calm waters and scenic
-                    beauty of this coastal destination.
-                </p>
+    </article>
 
-                <div class="location">
-                    📍 Kakinada Coast
-                </div>
 
-                <a href="#" class="view">
-                    View Details
-                    <span>→</span>
-                </a>
+    <!-- 6 -->
 
-            </div>
+    <article class="card">
 
-        </article>
+      <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+        alt="Nearby Destinations">
 
+      <div class="card-content">
 
+        <div class="tag">
+          DESTINATION
+        </div>
 
-        <!-- 6 -->
+        <h2>
+          Nearby Destinations
+        </h2>
 
-        <article class="card">
+        <p>
+          Discover beautiful places around
+          Kakinada perfect for a short trip.
+        </p>
 
-            <img
-                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80"
-                alt="Nearby Destinations">
+        <div class="location">
+          📍 Around Kakinada
+        </div>
 
-            <div class="card-content">
+        <a href="#" class="view">
+          View Details <span>→</span>
+        </a>
 
-                <div class="tag">
-                    DESTINATION
-                </div>
+      </div>
 
-                <h2>
-                    Nearby Destinations
-                </h2>
+    </article>
 
-                <p>
-                    Discover beautiful places around
-                    Kakinada perfect for a short trip.
-                </p>
 
-                <div class="location">
-                    📍 Around Kakinada
-                </div>
-
-                <a href="#" class="view">
-                    View Details
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-
-    </div>
+  </div>
 
 </section>
-
 
 
 <!-- ================= CTA ================= -->
 
-<section class="cta">
+<section class="cta" id="promote">
 
-    <div>
+  <div>
 
-        <h2>
-            Know a beautiful place?
-        </h2>
+    <h2>
+      Know a beautiful place?
+    </h2>
 
-        <p>
-            Suggest a destination and help us
-            discover more of Kakinada.
-        </p>
+    <p>
+      Suggest a destination and help us discover
+      more of Kakinada.
+    </p>
 
-    </div>
+  </div>
 
-
-    <button>
-        Suggest a Place →
-    </button>
+  <button>
+    Suggest a Place →
+  </button>
 
 </section>
 
 
-
 <!-- ================= FOOTER ================= -->
 
-<footer class="site-footer">
+<footer>
+
+  <div class="footer-logo">
+
+    <img
+      src="logo.jpg"
+      alt="Kakinada Diaries">
+
+    <p>
+      Everything Kakinada.<br>
+      One Place.
+    </p>
+
+  </div>
 
 
-    <div class="footer-main">
+  <div>
+
+    <h3>
+      Quick Links
+    </h3>
+
+    <a href="index.html">Home</a>
+    <a href="businesses.html">Businesses</a>
+    <a href="places.html">Places</a>
+    <a href="food.html">Food</a>
+    <a href="events.html">Events</a>
+    <a href="services.html">Services</a>
+
+  </div>
 
 
-        <div class="footer-brand">
+  <div>
 
-            <img
-                src="logo.jpg"
-                alt="Kakinada Diaries">
+    <h3>
+      For Businesses
+    </h3>
 
-            <p>
-                Everything Kakinada.<br>
-                One Place.
-            </p>
+    <a href="#promote">
+      Promote Your Business
+    </a>
 
+    <a href="#">
+      Business Login
+    </a>
 
-            <div class="socials">
+    <a href="#">
+      Add Business
+    </a>
 
-                <a href="#">
-                    ◎
-                </a>
+    <a href="#">
+      Pricing
+    </a>
 
-                <a href="#">
-                    ●
-                </a>
-
-                <a href="#">
-                    ▶
-                </a>
-
-                <a href="#">
-                    ✉
-                </a>
-
-            </div>
-
-        </div>
+  </div>
 
 
+  <div>
 
-        <div class="footer-column">
+    <h3>
+      Support
+    </h3>
 
-            <h3>
-                Quick Links
-            </h3>
+    <a href="#">
+      About Us
+    </a>
 
-            <a href="index.html">
-                Home
-            </a>
+    <a href="#">
+      Contact Us
+    </a>
 
-            <a href="businesses.html">
-                Businesses
-            </a>
+    <a href="#">
+      Privacy Policy
+    </a>
 
-            <a href="places.html">
-                Places
-            </a>
+    <a href="#">
+      Terms & Conditions
+    </a>
 
-            <a href="food.html">
-                Food
-            </a>
-
-            <a href="events.html">
-                Events
-            </a>
-
-            <a href="services.html">
-                Services
-            </a>
-
-        </div>
+  </div>
 
 
+  <div>
 
-        <div class="footer-column">
+    <h3>
+      Contact Us
+    </h3>
 
-            <h3>
-                For Businesses
-            </h3>
+    <p>
+      📞 +91 90105 81234
+    </p>
 
-            <a href="#">
-                Promote Your Business
-            </a>
+    <p>
+      ✉ hello@kakinadadiaries.com
+    </p>
 
-            <a href="#">
-                Business Login
-            </a>
+    <p>
+      📍 Kakinada, Andhra Pradesh
+    </p>
 
-            <a href="#">
-                Add Business
-            </a>
-
-            <a href="#">
-                Pricing
-            </a>
-
-        </div>
-
-
-
-        <div class="footer-column">
-
-            <h3>
-                Support
-            </h3>
-
-            <a href="#">
-                About Us
-            </a>
-
-            <a href="#">
-                Contact Us
-            </a>
-
-            <a href="#">
-                Privacy Policy
-            </a>
-
-            <a href="#">
-                Terms & Conditions
-            </a>
-
-        </div>
-
-
-
-        <div class="footer-column">
-
-            <h3>
-                Contact Us
-            </h3>
-
-            <p>
-                📞 +91 90105 81234
-            </p>
-
-            <p>
-                ✉ hello@kakinadadiaries.com
-            </p>
-
-            <p>
-                📍 Kakinada, Andhra Pradesh
-            </p>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <span>
-            © 2026 Kakinada Diaries.
-            All Rights Reserved.
-        </span>
-
-        <span>
-            Made with ❤️ for Kakinada
-        </span>
-
-    </div>
-
+  </div>
 
 </footer>
 
+
+<div class="copyright">
+
+  © 2026 Kakinada Diaries. All Rights Reserved.
+
+</div>
 
 
 <!-- ================= MENU SCRIPT ================= -->
 
 <script>
 
-const menuBtn =
-    document.getElementById("menuBtn");
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
 
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const closeMenu =
-    document.getElementById("closeMenu");
-
-
-menuBtn.addEventListener("click", function(){
-
+if (menuBtn) {
+  menuBtn.addEventListener("click", function () {
     mobileMenu.classList.add("open");
+  });
+}
 
-});
-
-
-closeMenu.addEventListener("click", function(){
-
+if (closeMenu) {
+  closeMenu.addEventListener("click", function () {
     mobileMenu.classList.remove("open");
+  });
+}
 
-});
+document.querySelectorAll(".mobile-navigation a").forEach(function(link) {
 
-
-const menuLinks =
-    document.querySelectorAll(
-        ".mobile-navigation a"
-    );
-
-
-menuLinks.forEach(function(link){
-
-    link.addEventListener("click", function(){
-
-        mobileMenu.classList.remove("open");
-
-    });
+  link.addEventListener("click", function() {
+    mobileMenu.classList.remove("open");
+  });
 
 });
 
 </script>
-
 
 </body>
 </html>
