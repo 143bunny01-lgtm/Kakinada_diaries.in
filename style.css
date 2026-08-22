@@ -137,7 +137,7 @@ button {
 }
 
 
-/* ================= MOBILE MENU ================= */
+/* ================= PREMIUM MOBILE MENU ================= */
 
 .mobile-menu {
     display: none;
@@ -145,58 +145,21 @@ button {
     position: fixed;
     inset: 0;
 
-    background: #f8f5ef;
+    z-index: 9999;
 
-    z-index: 200;
+    background: #f8f5ee;
 
     flex-direction: column;
-    align-items: center;
 
-    padding: 32px 24px 40px;
+    padding: 28px 22px 35px;
 
     overflow-y: auto;
+
+    color: #111;
 }
 
 .mobile-menu.open {
     display: flex;
-}
-
-
-/* LOGO */
-
-.mobile-menu img {
-    width: 145px;
-    height: auto;
-
-    margin-top: 35px;
-    margin-bottom: 55px;
-
-    border-radius: 0;
-}
-
-
-/* MENU LINKS */
-
-.mobile-menu a {
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 20px;
-    font-weight: 500;
-
-    color: #171717;
-
-    text-decoration: none;
-
-    margin: 0;
-
-    padding: 11px 20px;
-
-    transition: all .25s ease;
-}
-
-.mobile-menu a:hover,
-.mobile-menu a:active {
-    color: #b8872b;
 }
 
 
@@ -205,54 +168,367 @@ button {
 .close-menu {
     position: absolute;
 
-    top: 24px;
-    right: 24px;
+    top: 22px;
+    right: 22px;
 
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
 
     border: none;
-
     border-radius: 50%;
 
-    background: #171717;
-    color: #fff;
+    background: #111;
 
-    font-size: 25px;
+    color: #e7b94d;
+
+    font-size: 32px;
+    font-weight: 300;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
+    z-index: 10;
 }
 
 
-/* PROMOTE BUTTON */
+/* BRAND */
 
-.mobile-promote {
-    margin-top: 32px;
+.mobile-brand {
+    margin-top: 15px;
 
-    background: #171717;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
-    color: #fff !important;
+.mobile-brand img {
+    width: 180px;
+    height: auto;
 
-    padding: 15px 30px;
+    object-fit: contain;
 
-    border-radius: 30px;
+    margin-bottom: 5px;
+}
 
-    font-family: "DM Sans", sans-serif !important;
+.mobile-brand span {
+    margin-left: 8px;
 
-    font-size: 14px !important;
+    font-family: "DM Sans", sans-serif;
 
-    font-weight: 500;
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #9b6b20;
+}
+
+
+/* TITLE */
+
+.mobile-menu-title {
+    margin-top: 38px;
+    margin-bottom: 22px;
+}
+
+.mobile-menu-title small {
+    display: block;
+
+    font-family: cursive;
+
+    font-size: 38px;
+
+    line-height: .8;
+
+    color: #c9942e;
+}
+
+.mobile-menu-title h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 58px;
+
+    line-height: 1;
+
+    color: #111;
+}
+
+.title-line {
+    width: 135px;
+
+    height: 3px;
+
+    margin-top: 13px;
+
+    background: #c9942e;
+
+    border-radius: 10px;
+}
+
+
+/* NAVIGATION */
+
+.mobile-navigation {
+    width: 100%;
+}
+
+.mobile-navigation a {
+    display: grid;
+
+    grid-template-columns: 58px 1fr 30px;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 68px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #dfd2b9;
 
     text-decoration: none;
+
+    color: #111;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    transition: .25s ease;
 }
 
-.mobile-promote:hover {
-    background: #b8872b;
-    color: #fff !important;
+.mobile-navigation a:first-child {
+    border-top: 1px solid #dfd2b9;
+}
+
+.mobile-navigation a:hover {
+    color: #c9942e;
+
+    padding-left: 8px;
+}
+
+.menu-icon {
+    font-family: sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    color: #111;
+
+    text-align: left;
+}
+
+.mobile-navigation b {
+    font-family: sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    color: #c9942e;
+
+    text-align: right;
+}
+
+
+/* PROMOTE CARD */
+
+.mobile-promote {
+    display: grid;
+
+    grid-template-columns: 65px 1fr 50px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 28px;
+
+    padding: 18px;
+
+    border: 1px solid #dcb66b;
+
+    border-radius: 18px;
+
+    background: #fffaf0;
+
+    text-decoration: none;
+
+    color: #111 !important;
+
+    box-sizing: border-box;
+}
+
+.promote-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f7e4b6;
+
+    font-size: 27px;
+}
+
+.promote-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.promote-text strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    line-height: 1.2;
+}
+
+.promote-text span {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #666;
+}
+
+.promote-arrow {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e3b34d;
+
+    color: #111;
+
+    font-size: 25px;
+}
+
+
+/* CONNECT */
+
+.mobile-connect {
+    margin-top: 35px;
+
+    padding-bottom: 15px;
+}
+
+.connect-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    justify-content: center;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #76511d;
+
+    margin-bottom: 20px;
+}
+
+.connect-title span {
+    flex: 1;
+
+    height: 1px;
+
+    background: #dcb66b;
+}
+
+.connect-links {
+    display: flex;
+
+    justify-content: space-around;
+
+    gap: 8px;
+}
+
+.connect-links a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+}
+
+.connect-links a span {
+    font-size: 25px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .mobile-menu {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .mobile-brand img {
+        width: 155px;
+    }
+
+    .mobile-menu-title h2 {
+        font-size: 50px;
+    }
+
+    .mobile-menu-title small {
+        font-size: 34px;
+    }
+
+    .mobile-navigation a {
+        min-height: 63px;
+        font-size: 21px;
+    }
+
+    .mobile-promote {
+        grid-template-columns: 55px 1fr 45px;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .promote-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .promote-arrow {
+        width: 43px;
+        height: 43px;
+    }
 }
 
 /* ================= DESTINATION HERO ================= */
