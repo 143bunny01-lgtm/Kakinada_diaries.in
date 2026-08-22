@@ -19,7 +19,13 @@ body{
     color:#171717;
 }
 
-/* HEADER */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ================= HEADER ================= */
+
 header{
     height:72px;
     background:#fff;
@@ -28,6 +34,8 @@ header{
     justify-content:space-between;
     padding:0 5%;
     border-bottom:1px solid #eee;
+    position:relative;
+    z-index:100;
 }
 
 .logo img{
@@ -65,7 +73,124 @@ nav a.active{
     font-size:22px;
 }
 
-/* HERO */
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu{
+    display:none;
+}
+
+@media(max-width:800px){
+
+    .mobile-menu{
+        position:fixed;
+        inset:0;
+        background:#f8f5ef;
+        z-index:999;
+        padding:30px 36px;
+        overflow-y:auto;
+    }
+
+    .mobile-menu.open{
+        display:block;
+    }
+
+    .mobile-menu-top{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:28px;
+    }
+
+    .mobile-brand img{
+        width:125px;
+        height:52px;
+        object-fit:cover;
+    }
+
+    .close-menu{
+        width:64px;
+        height:64px;
+        border:none;
+        border-radius:50%;
+        background:#171717;
+        color:#d4ad57;
+        font-size:30px;
+    }
+
+    .mobile-tagline{
+        text-align:center;
+        color:#a88745;
+        font-size:13px;
+        letter-spacing:4px;
+        margin:10px 0 65px;
+    }
+
+    .mobile-title small{
+        display:block;
+        color:#c99b38;
+        font-family:Georgia,serif;
+        font-size:30px;
+        font-style:italic;
+        margin-bottom:0;
+    }
+
+    .mobile-title h2{
+        font-family:Georgia,serif;
+        font-size:52px;
+        line-height:1;
+        margin-bottom:20px;
+    }
+
+    .mobile-title .title-line{
+        width:240px;
+        height:5px;
+        background:#c99b38;
+        margin-bottom:42px;
+    }
+
+    .mobile-navigation{
+        border-top:1px solid #ddd6c9;
+    }
+
+    .mobile-navigation a{
+        min-height:96px;
+        border-bottom:1px solid #ddd6c9;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        font-family:Georgia,serif;
+        font-size:34px;
+        padding:0 4px;
+    }
+
+    .mobile-navigation a span:first-child{
+        width:55px;
+        font-family:Arial,sans-serif;
+        font-size:30px;
+    }
+
+    .mobile-navigation a span:last-child{
+        color:#c99b38;
+        font-family:Arial,sans-serif;
+        font-size:42px;
+    }
+
+    .mobile-promote{
+        display:block;
+        width:100%;
+        max-width:340px;
+        margin:55px auto 20px;
+        padding:20px;
+        border-radius:50px;
+        background:#171717;
+        color:white;
+        text-align:center;
+        font-size:18px;
+    }
+}
+
+/* ================= HERO ================= */
+
 .hero{
     background:#171717;
     color:white;
@@ -98,7 +223,8 @@ nav a.active{
     line-height:1.7;
 }
 
-/* CATEGORIES */
+/* ================= CATEGORIES ================= */
+
 .category-section{
     padding:55px 5% 20px;
 }
@@ -127,7 +253,8 @@ nav a.active{
     color:white;
 }
 
-/* FOOD GRID */
+/* ================= FOOD GRID ================= */
+
 .food-section{
     padding:30px 5% 70px;
 }
@@ -201,7 +328,8 @@ nav a.active{
     margin-left:8px;
 }
 
-/* CTA */
+/* ================= CTA ================= */
+
 .cta{
     margin:0 5% 70px;
     padding:38px;
@@ -231,7 +359,8 @@ nav a.active{
     font-weight:bold;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 .site-footer{
     background:#f8f5ef;
     border-top:1px solid #e5dfd3;
@@ -308,7 +437,8 @@ nav a.active{
     font-size:12px;
 }
 
-/* MOBILE */
+/* ================= MOBILE FOOD PAGE ================= */
+
 @media(max-width:800px){
 
     header{
@@ -390,32 +520,145 @@ nav a.active{
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
+
 <header>
 
     <div class="logo">
-        <img src="logo.jpg" alt="Kakinada Diaries">
+        <a href="index.html">
+            <img src="logo.jpg" alt="Kakinada Diaries">
+        </a>
     </div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="businesses.html">Businesses</a>
-        <a href="places.html">Places</a>
-        <a href="food.html" class="active">Food</a>
-        <a href="events.html">Events</a>
-        <a href="stories.html">Stories</a>
-        <a href="services.html">Services</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="businesses.html">
+            Businesses
+        </a>
+
+        <a href="places.html">
+            Places
+        </a>
+
+        <a href="food.html" class="active">
+            Food
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
     </nav>
 
-    <button class="menu-btn">☰</button>
+    <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu">
+        ☰
+    </button>
 
 </header>
 
 
-<!-- HERO -->
+<!-- ================= MOBILE MENU ================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-menu-top">
+
+        <div class="mobile-brand">
+            <img
+                src="logo.jpg"
+                alt="Kakinada Diaries">
+        </div>
+
+        <button
+            class="close-menu"
+            id="closeMenu"
+            aria-label="Close menu">
+            ×
+        </button>
+
+    </div>
+
+    <div class="mobile-tagline">
+        EXPLORE | DISCOVER | EXPERIENCE
+    </div>
+
+    <div class="mobile-title">
+
+        <small>Explore</small>
+
+        <h2>Kakinada</h2>
+
+        <div class="title-line"></div>
+
+    </div>
+
+    <nav class="mobile-navigation">
+
+        <a href="index.html">
+            <span>⌂</span>
+            <span>Home</span>
+            <span>→</span>
+        </a>
+
+        <a href="businesses.html">
+            <span>▱</span>
+            <span>Businesses</span>
+            <span>→</span>
+        </a>
+
+        <a href="places.html">
+            <span>⊕</span>
+            <span>Places</span>
+            <span>→</span>
+        </a>
+
+        <a href="food.html">
+            <span>♜</span>
+            <span>Food</span>
+            <span>→</span>
+        </a>
+
+        <a href="events.html">
+            <span>□</span>
+            <span>Events</span>
+            <span>→</span>
+        </a>
+
+        <a href="services.html">
+            <span>▤</span>
+            <span>Services</span>
+            <span>→</span>
+        </a>
+
+    </nav>
+
+    <a
+        href="#"
+        class="mobile-promote">
+        Promote Your Business
+    </a>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
-    <div class="eyebrow">TASTE KAKINADA</div>
+    <div class="eyebrow">
+        TASTE KAKINADA
+    </div>
 
     <h1>
         Kakinada <span>Food</span>
@@ -429,10 +672,13 @@ nav a.active{
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- ================= CATEGORIES ================= -->
+
 <section class="category-section">
 
-    <div class="eyebrow">EXPLORE BY CATEGORY</div>
+    <div class="eyebrow">
+        EXPLORE BY CATEGORY
+    </div>
 
     <h2 class="section-title">
         Find something delicious
@@ -440,44 +686,76 @@ nav a.active{
 
     <div class="categories">
 
-        <div class="category active">All</div>
-        <div class="category">Restaurants</div>
-        <div class="category">Cafes</div>
-        <div class="category">Street Food</div>
-        <div class="category">Bakeries</div>
-        <div class="category">Desserts</div>
+        <div class="category active">
+            All
+        </div>
+
+        <div class="category">
+            Restaurants
+        </div>
+
+        <div class="category">
+            Cafes
+        </div>
+
+        <div class="category">
+            Street Food
+        </div>
+
+        <div class="category">
+            Bakeries
+        </div>
+
+        <div class="category">
+            Desserts
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- FOOD CARDS -->
+<!-- ================= FOOD CARDS ================= -->
+
 <section class="food-section">
 
 <div class="food-grid">
 
+
+    <!-- 1 -->
+
     <article class="food-card">
 
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80">
+        <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+            alt="Restaurant">
 
         <div class="food-content">
 
-            <div class="tag">RESTAURANT</div>
+            <div class="tag">
+                RESTAURANT
+            </div>
 
-            <h2>The Coastal Kitchen</h2>
+            <h2>
+                The Coastal Kitchen
+            </h2>
 
             <p>
                 A beautiful dining spot serving delicious
                 food in a relaxed atmosphere.
             </p>
 
-            <div class="location">📍 Kakinada</div>
+            <div class="location">
+                📍 Kakinada
+            </div>
 
-            <div class="rating">★ 4.8</div>
+            <div class="rating">
+                ★ 4.8
+            </div>
 
             <a href="#" class="view">
-                View Details <span>→</span>
+                View Details
+                <span>→</span>
             </a>
 
         </div>
@@ -485,27 +763,40 @@ nav a.active{
     </article>
 
 
+    <!-- 2 -->
+
     <article class="food-card">
 
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80">
+        <img
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80"
+            alt="Cafe">
 
         <div class="food-content">
 
-            <div class="tag">CAFE</div>
+            <div class="tag">
+                CAFE
+            </div>
 
-            <h2>Local Cafe</h2>
+            <h2>
+                Local Cafe
+            </h2>
 
             <p>
                 Relax with great coffee, tasty snacks
                 and a comfortable atmosphere.
             </p>
 
-            <div class="location">📍 Kakinada</div>
+            <div class="location">
+                📍 Kakinada
+            </div>
 
-            <div class="rating">★ 4.6</div>
+            <div class="rating">
+                ★ 4.6
+            </div>
 
             <a href="#" class="view">
-                View Details <span>→</span>
+                View Details
+                <span>→</span>
             </a>
 
         </div>
@@ -513,27 +804,40 @@ nav a.active{
     </article>
 
 
+    <!-- 3 -->
+
     <article class="food-card">
 
-        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80">
+        <img
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80"
+            alt="Pizza">
 
         <div class="food-content">
 
-            <div class="tag">FOOD</div>
+            <div class="tag">
+                FOOD
+            </div>
 
-            <h2>Pizza & More</h2>
+            <h2>
+                Pizza & More
+            </h2>
 
             <p>
                 Delicious comfort food and popular dishes
                 for every occasion.
             </p>
 
-            <div class="location">📍 Kakinada</div>
+            <div class="location">
+                📍 Kakinada
+            </div>
 
-            <div class="rating">★ 4.7</div>
+            <div class="rating">
+                ★ 4.7
+            </div>
 
             <a href="#" class="view">
-                View Details <span>→</span>
+                View Details
+                <span>→</span>
             </a>
 
         </div>
@@ -541,27 +845,40 @@ nav a.active{
     </article>
 
 
+    <!-- 4 -->
+
     <article class="food-card">
 
-        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80">
+        <img
+            src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80"
+            alt="Bakery">
 
         <div class="food-content">
 
-            <div class="tag">BAKERY</div>
+            <div class="tag">
+                BAKERY
+            </div>
 
-            <h2>Fresh Bake House</h2>
+            <h2>
+                Fresh Bake House
+            </h2>
 
             <p>
                 Freshly baked cakes, pastries and snacks
                 made for every celebration.
             </p>
 
-            <div class="location">📍 Kakinada</div>
+            <div class="location">
+                📍 Kakinada
+            </div>
 
-            <div class="rating">★ 4.5</div>
+            <div class="rating">
+                ★ 4.5
+            </div>
 
             <a href="#" class="view">
-                View Details <span>→</span>
+                View Details
+                <span>→</span>
             </a>
 
         </div>
@@ -569,27 +886,40 @@ nav a.active{
     </article>
 
 
+    <!-- 5 -->
+
     <article class="food-card">
 
-        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80">
+        <img
+            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80"
+            alt="Desserts">
 
         <div class="food-content">
 
-            <div class="tag">DESSERTS</div>
+            <div class="tag">
+                DESSERTS
+            </div>
 
-            <h2>Sweet Corner</h2>
+            <h2>
+                Sweet Corner
+            </h2>
 
             <p>
                 Treat yourself to delicious desserts,
                 sweets and refreshing drinks.
             </p>
 
-            <div class="location">📍 Kakinada</div>
+            <div class="location">
+                📍 Kakinada
+            </div>
 
-            <div class="rating">★ 4.6</div>
+            <div class="rating">
+                ★ 4.6
+            </div>
 
             <a href="#" class="view">
-                View Details <span>→</span>
+                View Details
+                <span>→</span>
             </a>
 
         </div>
@@ -597,48 +927,67 @@ nav a.active{
     </article>
 
 
+    <!-- 6 -->
+
     <article class="food-card">
 
-        <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=900&q=80">
+        <img
+            src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=900&q=80"
+            alt="Street Food">
 
         <div class="food-content">
 
-            <div class="tag">STREET FOOD</div>
+            <div class="tag">
+                STREET FOOD
+            </div>
 
-            <h2>Kakinada Street Food</h2>
+            <h2>
+                Kakinada Street Food
+            </h2>
 
             <p>
                 Explore popular local flavours and
                 delicious street food around the city.
             </p>
 
-            <div class="location">📍 Kakinada</div>
+            <div class="location">
+                📍 Kakinada
+            </div>
 
-            <div class="rating">★ 4.7</div>
+            <div class="rating">
+                ★ 4.7
+            </div>
 
             <a href="#" class="view">
-                View Details <span>→</span>
+                View Details
+                <span>→</span>
             </a>
 
         </div>
 
     </article>
 
+
 </div>
 
 </section>
 
 
-<!-- CTA -->
+<!-- ================= CTA ================= -->
+
 <section class="cta">
 
     <div>
-        <h2>Know a great food place?</h2>
+
+        <h2>
+            Know a great food place?
+        </h2>
 
         <p>
             Suggest a restaurant, cafe or food spot
             and help us discover more of Kakinada.
         </p>
+
     </div>
 
     <button>
@@ -648,14 +997,18 @@ nav a.active{
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
 <footer class="site-footer">
 
 <div class="footer-main">
 
+
     <div class="footer-brand">
 
-        <img src="logo.jpg" alt="Kakinada Diaries">
+        <img
+            src="logo.jpg"
+            alt="Kakinada Diaries">
 
         <p>
             Everything Kakinada.<br>
@@ -663,10 +1016,23 @@ nav a.active{
         </p>
 
         <div class="socials">
-            <a href="#">◎</a>
-            <a href="#">◉</a>
-            <a href="#">▶</a>
-            <a href="#">✉</a>
+
+            <a href="#">
+                ◎
+            </a>
+
+            <a href="#">
+                ◉
+            </a>
+
+            <a href="#">
+                ▶
+            </a>
+
+            <a href="#">
+                ✉
+            </a>
+
         </div>
 
     </div>
@@ -674,51 +1040,107 @@ nav a.active{
 
     <div class="footer-column">
 
-        <h3>Quick Links</h3>
+        <h3>
+            Quick Links
+        </h3>
 
-        <a href="index.html">Home</a>
-        <a href="businesses.html">Businesses</a>
-        <a href="places.html">Places</a>
-        <a href="food.html">Food</a>
-        <a href="events.html">Events</a>
-        <a href="stories.html">Stories</a>
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="businesses.html">
+            Businesses
+        </a>
+
+        <a href="places.html">
+            Places
+        </a>
+
+        <a href="food.html">
+            Food
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
 
     </div>
 
 
     <div class="footer-column">
 
-        <h3>For Businesses</h3>
+        <h3>
+            For Businesses
+        </h3>
 
-        <a href="#">Promote Your Business</a>
-        <a href="#">Business Login</a>
-        <a href="#">Add Business</a>
-        <a href="#">Pricing</a>
+        <a href="#">
+            Promote Your Business
+        </a>
+
+        <a href="#">
+            Business Login
+        </a>
+
+        <a href="#">
+            Add Business
+        </a>
+
+        <a href="#">
+            Pricing
+        </a>
 
     </div>
 
 
     <div class="footer-column">
 
-        <h3>Support</h3>
+        <h3>
+            Support
+        </h3>
 
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Conditions</a>
+        <a href="#">
+            About Us
+        </a>
+
+        <a href="#">
+            Contact Us
+        </a>
+
+        <a href="#">
+            Privacy Policy
+        </a>
+
+        <a href="#">
+            Terms & Conditions
+        </a>
 
     </div>
 
 
     <div class="footer-column contact">
 
-        <h3>Contact Us</h3>
+        <h3>
+            Contact Us
+        </h3>
 
-        <p>📞 +91 90105 81234</p>
-        <p>✉ hello@kakinadadiaries.com</p>
-        <p>📍 Kakinada, Andhra Pradesh</p>
+        <p>
+            📞 +91 90105 81234
+        </p>
+
+        <p>
+            ✉ hello@kakinadadiaries.com
+        </p>
+
+        <p>
+            📍 Kakinada, Andhra Pradesh
+        </p>
 
     </div>
+
 
 </div>
 
@@ -737,5 +1159,35 @@ nav a.active{
 
 </footer>
 
+
+<!-- ================= MOBILE MENU SCRIPT ================= -->
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
+
+menuBtn.addEventListener("click", function(){
+    mobileMenu.classList.add("open");
+    document.body.style.overflow = "hidden";
+});
+
+closeMenu.addEventListener("click", function(){
+    mobileMenu.classList.remove("open");
+    document.body.style.overflow = "";
+});
+
+document.querySelectorAll(".mobile-navigation a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+        mobileMenu.classList.remove("open");
+        document.body.style.overflow = "";
+    });
+
+});
+
+</script>
+
 </body>
-                                </html>
+</html>
