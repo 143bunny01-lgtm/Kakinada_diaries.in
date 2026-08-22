@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Places | Kakinada Diaries</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f8f5ef;
+    color:#171717;
+}
+
+/* HEADER */
+header{
+    height:72px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    border-bottom:1px solid #eee;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:cover;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#171717;
+    font-size:14px;
+}
+
+nav a.active{
+    color:#c99b38;
+    border-bottom:2px solid #c99b38;
+    padding-bottom:8px;
+}
+
+.menu-btn{
+    display:none;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:none;
+    background:#171717;
+    color:white;
+    font-size:22px;
+}
+
+/* HERO */
+.hero{
+    background:#171717;
+    color:white;
+    text-align:center;
+    padding:75px 20px 65px;
+}
+
+.eyebrow{
+    color:#d4ad57;
+    font-size:12px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:58px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#d4ad57;
+}
+
+.hero p{
+    color:#ccc;
+    font-size:15px;
+    max-width:600px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* CATEGORY */
+.category-section{
+    padding:55px 5% 20px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+.categories{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.category{
+    padding:11px 20px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    background:white;
+    cursor:pointer;
+}
+
+.category.active{
+    background:#171717;
+    color:white;
+}
+
+/* PLACES GRID */
+.places{
+    padding:30px 5% 70px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.tag{
+    color:#c99b38;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.card h2{
+    font-family:Georgia,serif;
+    font-size:24px;
+    margin:10px 0;
+}
+
+.card p{
+    color:#777;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.location{
+    margin-top:15px;
+    color:#777;
+    font-size:13px;
+}
+
+.view{
+    margin-top:18px;
+    display:inline-block;
+    color:#171717;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.view span{
+    color:#c99b38;
+    font-size:18px;
+    margin-left:8px;
+}
+
+/* BUSINESS CTA */
+.cta{
+    margin:0 5% 70px;
+    padding:38px;
+    background:#171717;
+    border-radius:20px;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cta h2{
+    font-family:Georgia,serif;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    color:#aaa;
+}
+
+.cta button{
+    background:#e5bd62;
+    border:none;
+    padding:14px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    header{
+        height:68px;
+        padding:0 15px;
+    }
+
+    .logo img{
+        width:52px;
+        height:52px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        padding:55px 20px 50px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        line-height:1.1;
+    }
+
+    .category-section{
+        padding:40px 20px 15px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .places{
+        padding:25px 20px 50px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .card img{
+        height:210px;
+    }
+
+    .cta{
+        margin:0 20px 50px;
+        padding:28px 22px;
+        display:block;
+    }
+
+    .cta button{
+        margin-top:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        <img src="logo.jpg" alt="Kakinada Diaries">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="places.html" class="active">Places</a>
+        <a href="food.html">Food</a>
+        <a href="events.html">Events</a>
+        <a href="stories.html">Stories</a>
+        <a href="services.html">Services</a>
+    </nav>
+
+    <button class="menu-btn">☰</button>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="eyebrow">DISCOVER KAKINADA</div>
+
+    <h1>
+        Kakinada <span>Places</span>
+    </h1>
+
+    <p>
+        Explore beautiful beaches, peaceful destinations,
+        famous landmarks and hidden gems around Kakinada.
+    </p>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="category-section">
+
+    <div class="eyebrow">EXPLORE BY TYPE</div>
+
+    <h2 class="section-title">
+        Find your next destination
+    </h2>
+
+    <div class="categories">
+
+        <div class="category active">All</div>
+        <div class="category">Beaches</div>
+        <div class="category">Nature</div>
+        <div class="category">Temples</div>
+        <div class="category">Landmarks</div>
+        <div class="category">Tourist Spots</div>
+
+    </div>
+
+</section>
+
+
+<!-- PLACES -->
+<section class="places">
+
+<div class="grid">
+
+    <!-- 1 -->
+    <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80">
+
+        <div class="card-content">
+
+            <div class="tag">BEACH</div>
+
+            <h2>Kakinada Beach</h2>
+
+            <p>
+                Enjoy the sea breeze, beautiful sunsets
+                and peaceful coastal views.
+            </p>
+
+            <div class="location">
+                📍 Kakinada
+            </div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- 2 -->
+    <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
+
+        <div class="card-content">
+
+            <div class="tag">NATURE</div>
+
+            <h2>Coringa Wildlife Sanctuary</h2>
+
+            <p>
+                Discover mangrove forests, wildlife
+                and the natural beauty near Kakinada.
+            </p>
+
+            <div class="location">
+                📍 Coringa
+            </div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- 3 -->
+    <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80">
+
+        <div class="card-content">
+
+            <div class="tag">LANDMARK</div>
+
+            <h2>Coringa Bridge</h2>
+
+            <p>
+                A beautiful destination surrounded by
+                scenic views and peaceful surroundings.
+            </p>
+
+            <div class="location">
+                📍 Kakinada
+            </div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- 4 -->
+    <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80">
+
+        <div class="card-content">
+
+            <div class="tag">TEMPLE</div>
+
+            <h2>Local Temples</h2>
+
+            <p>
+                Explore the spiritual and cultural places
+                around Kakinada.
+            </p>
+
+            <div class="location">
+                📍 Kakinada
+            </div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- 5 -->
+    <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=900&q=80">
+
+        <div class="card-content">
+
+            <div class="tag">TOURIST SPOT</div>
+
+            <h2>Hope Island</h2>
+
+            <p>
+                Experience the calm waters and scenic
+                beauty of this coastal destination.
+            </p>
+
+            <div class="location">
+                📍 Kakinada Coast
+            </div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- 6 -->
+    <article class="card">
+
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80">
+
+        <div class="card-content">
+
+            <div class="tag">DESTINATION</div>
+
+            <h2>Nearby Destinations</h2>
+
+            <p>
+                Discover beautiful places around Kakinada
+                perfect for a short trip.
+            </p>
+
+            <div class="location">
+                📍 Around Kakinada
+            </div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+    <div>
+        <h2>Know a beautiful place?</h2>
+        <p>
+            Suggest a destination and help us discover
+            more of Kakinada.
+        </p>
+    </div>
+
+    <button>
+        Suggest a Place →
+    </button>
+
+</section>
+
+</body>
+</html>
