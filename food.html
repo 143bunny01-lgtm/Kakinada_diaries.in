@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Food | Kakinada Diaries</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f8f5ef;
+    color:#171717;
+}
+
+/* HEADER */
+header{
+    height:72px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    border-bottom:1px solid #eee;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:cover;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#171717;
+    font-size:14px;
+}
+
+nav a.active{
+    color:#c99b38;
+    border-bottom:2px solid #c99b38;
+    padding-bottom:8px;
+}
+
+.menu-btn{
+    display:none;
+    width:44px;
+    height:44px;
+    border:none;
+    border-radius:50%;
+    background:#171717;
+    color:white;
+    font-size:22px;
+}
+
+/* HERO */
+.hero{
+    background:#171717;
+    color:white;
+    text-align:center;
+    padding:75px 20px 65px;
+}
+
+.eyebrow{
+    color:#d4ad57;
+    font-size:12px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:58px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#d4ad57;
+}
+
+.hero p{
+    color:#ccc;
+    font-size:15px;
+    max-width:600px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* CATEGORIES */
+.category-section{
+    padding:55px 5% 20px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+.categories{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.category{
+    padding:11px 20px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    background:white;
+}
+
+.category.active{
+    background:#171717;
+    color:white;
+}
+
+/* FOOD GRID */
+.food-section{
+    padding:30px 5% 70px;
+}
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.food-card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.food-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.food-content{
+    padding:20px;
+}
+
+.tag{
+    color:#c99b38;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.food-card h2{
+    font-family:Georgia,serif;
+    font-size:24px;
+    margin:10px 0;
+}
+
+.food-card p{
+    color:#777;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.location{
+    margin-top:15px;
+    color:#777;
+    font-size:13px;
+}
+
+.rating{
+    margin-top:12px;
+    color:#a27a21;
+    font-size:13px;
+}
+
+.view{
+    margin-top:18px;
+    display:inline-block;
+    color:#171717;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.view span{
+    color:#c99b38;
+    font-size:18px;
+    margin-left:8px;
+}
+
+/* CTA */
+.cta{
+    margin:0 5% 70px;
+    padding:38px;
+    background:#171717;
+    border-radius:20px;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cta h2{
+    font-family:Georgia,serif;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    color:#aaa;
+}
+
+.cta button{
+    background:#e5bd62;
+    border:none;
+    padding:14px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+.site-footer{
+    background:#f8f5ef;
+    border-top:1px solid #e5dfd3;
+}
+
+.footer-main{
+    padding:60px 5% 50px;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr 1.3fr;
+    gap:40px;
+}
+
+.footer-brand img{
+    width:85px;
+    height:85px;
+    object-fit:cover;
+}
+
+.footer-brand p{
+    margin-top:18px;
+    color:#555;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.socials{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.socials a{
+    width:34px;
+    height:34px;
+    border:1px solid #bbb;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#171717;
+}
+
+.footer-column{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-column h3{
+    font-family:Georgia,serif;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.footer-column a{
+    text-decoration:none;
+    color:#555;
+    font-size:13px;
+}
+
+.contact p{
+    color:#555;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.footer-bottom{
+    background:#171717;
+    color:#aaa;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    header{
+        height:68px;
+        padding:0 15px;
+    }
+
+    .logo img{
+        width:52px;
+        height:52px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        padding:55px 20px 50px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        line-height:1.1;
+    }
+
+    .category-section{
+        padding:40px 20px 15px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .food-section{
+        padding:25px 20px 50px;
+    }
+
+    .food-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .food-card img{
+        height:210px;
+    }
+
+    .cta{
+        margin:0 20px 50px;
+        padding:28px 22px;
+        display:block;
+    }
+
+    .cta button{
+        margin-top:20px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+        gap:35px 25px;
+        padding:45px 25px;
+    }
+
+    .footer-brand{
+        grid-column:1 / -1;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        <img src="logo.jpg" alt="Kakinada Diaries">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="places.html">Places</a>
+        <a href="food.html" class="active">Food</a>
+        <a href="events.html">Events</a>
+        <a href="stories.html">Stories</a>
+        <a href="services.html">Services</a>
+    </nav>
+
+    <button class="menu-btn">☰</button>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="eyebrow">TASTE KAKINADA</div>
+
+    <h1>
+        Kakinada <span>Food</span>
+    </h1>
+
+    <p>
+        Discover the best restaurants, cafes, street food
+        and delicious places to eat around Kakinada.
+    </p>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="category-section">
+
+    <div class="eyebrow">EXPLORE BY CATEGORY</div>
+
+    <h2 class="section-title">
+        Find something delicious
+    </h2>
+
+    <div class="categories">
+
+        <div class="category active">All</div>
+        <div class="category">Restaurants</div>
+        <div class="category">Cafes</div>
+        <div class="category">Street Food</div>
+        <div class="category">Bakeries</div>
+        <div class="category">Desserts</div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOD CARDS -->
+<section class="food-section">
+
+<div class="food-grid">
+
+    <article class="food-card">
+
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80">
+
+        <div class="food-content">
+
+            <div class="tag">RESTAURANT</div>
+
+            <h2>The Coastal Kitchen</h2>
+
+            <p>
+                A beautiful dining spot serving delicious
+                food in a relaxed atmosphere.
+            </p>
+
+            <div class="location">📍 Kakinada</div>
+
+            <div class="rating">★ 4.8</div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="food-card">
+
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80">
+
+        <div class="food-content">
+
+            <div class="tag">CAFE</div>
+
+            <h2>Local Cafe</h2>
+
+            <p>
+                Relax with great coffee, tasty snacks
+                and a comfortable atmosphere.
+            </p>
+
+            <div class="location">📍 Kakinada</div>
+
+            <div class="rating">★ 4.6</div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="food-card">
+
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80">
+
+        <div class="food-content">
+
+            <div class="tag">FOOD</div>
+
+            <h2>Pizza & More</h2>
+
+            <p>
+                Delicious comfort food and popular dishes
+                for every occasion.
+            </p>
+
+            <div class="location">📍 Kakinada</div>
+
+            <div class="rating">★ 4.7</div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="food-card">
+
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80">
+
+        <div class="food-content">
+
+            <div class="tag">BAKERY</div>
+
+            <h2>Fresh Bake House</h2>
+
+            <p>
+                Freshly baked cakes, pastries and snacks
+                made for every celebration.
+            </p>
+
+            <div class="location">📍 Kakinada</div>
+
+            <div class="rating">★ 4.5</div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="food-card">
+
+        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80">
+
+        <div class="food-content">
+
+            <div class="tag">DESSERTS</div>
+
+            <h2>Sweet Corner</h2>
+
+            <p>
+                Treat yourself to delicious desserts,
+                sweets and refreshing drinks.
+            </p>
+
+            <div class="location">📍 Kakinada</div>
+
+            <div class="rating">★ 4.6</div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="food-card">
+
+        <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=900&q=80">
+
+        <div class="food-content">
+
+            <div class="tag">STREET FOOD</div>
+
+            <h2>Kakinada Street Food</h2>
+
+            <p>
+                Explore popular local flavours and
+                delicious street food around the city.
+            </p>
+
+            <div class="location">📍 Kakinada</div>
+
+            <div class="rating">★ 4.7</div>
+
+            <a href="#" class="view">
+                View Details <span>→</span>
+            </a>
+
+        </div>
+
+    </article>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+    <div>
+        <h2>Know a great food place?</h2>
+
+        <p>
+            Suggest a restaurant, cafe or food spot
+            and help us discover more of Kakinada.
+        </p>
+    </div>
+
+    <button>
+        Suggest a Food Place →
+    </button>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+<div class="footer-main">
+
+    <div class="footer-brand">
+
+        <img src="logo.jpg" alt="Kakinada Diaries">
+
+        <p>
+            Everything Kakinada.<br>
+            One Place.
+        </p>
+
+        <div class="socials">
+            <a href="#">◎</a>
+            <a href="#">◉</a>
+            <a href="#">▶</a>
+            <a href="#">✉</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="places.html">Places</a>
+        <a href="food.html">Food</a>
+        <a href="events.html">Events</a>
+        <a href="stories.html">Stories</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>For Businesses</h3>
+
+        <a href="#">Promote Your Business</a>
+        <a href="#">Business Login</a>
+        <a href="#">Add Business</a>
+        <a href="#">Pricing</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Support</h3>
+
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+
+    </div>
+
+
+    <div class="footer-column contact">
+
+        <h3>Contact Us</h3>
+
+        <p>📞 +91 90105 81234</p>
+        <p>✉ hello@kakinadadiaries.com</p>
+        <p>📍 Kakinada, Andhra Pradesh</p>
+
+    </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+    <span>
+        © 2026 Kakinada Diaries. All Rights Reserved.
+    </span>
+
+    <span>
+        Made with ❤️ for Kakinada
+    </span>
+
+</div>
+
+</footer>
+
+</body>
+                                </html>
