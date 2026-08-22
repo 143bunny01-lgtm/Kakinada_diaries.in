@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Events | Kakinada Diaries</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f8f5ef;
+    color:#171717;
+}
+
+/* HEADER */
+header{
+    height:72px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    border-bottom:1px solid #eee;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:cover;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#171717;
+    font-size:14px;
+}
+
+nav a.active{
+    color:#c99b38;
+    border-bottom:2px solid #c99b38;
+    padding-bottom:8px;
+}
+
+.menu-btn{
+    display:none;
+    width:44px;
+    height:44px;
+    border:none;
+    border-radius:50%;
+    background:#171717;
+    color:white;
+    font-size:22px;
+}
+
+/* HERO */
+.hero{
+    background:#171717;
+    color:white;
+    text-align:center;
+    padding:75px 20px 65px;
+}
+
+.eyebrow{
+    color:#d4ad57;
+    font-size:12px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:58px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#d4ad57;
+}
+
+.hero p{
+    color:#ccc;
+    font-size:15px;
+    max-width:600px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* EVENT SECTION */
+.events-section{
+    padding:55px 5% 70px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/* EVENT CARD */
+.event-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.event-image{
+    position:relative;
+    height:230px;
+    overflow:hidden;
+}
+
+.event-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.event-date{
+    position:absolute;
+    top:15px;
+    left:15px;
+    width:58px;
+    height:65px;
+    background:#fff;
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.event-date strong{
+    font-size:20px;
+    line-height:1;
+}
+
+.event-date span{
+    margin-top:5px;
+    font-size:9px;
+    color:#b0832d;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.event-info{
+    padding:20px;
+}
+
+.event-tag{
+    color:#b0832d;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:1.5px;
+}
+
+.event-info h2{
+    font-family:Georgia,serif;
+    font-size:23px;
+    margin:9px 0;
+}
+
+.event-info p{
+    color:#777;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.event-details{
+    margin-top:15px;
+    padding-top:13px;
+    border-top:1px solid #eee;
+    color:#666;
+    font-size:12px;
+    line-height:1.8;
+}
+
+.event-button{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 16px;
+    background:#171717;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+/* CTA */
+.cta{
+    margin:0 5% 70px;
+    padding:40px;
+    background:#171717;
+    border-radius:20px;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.cta h2{
+    font-family:Georgia,serif;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    color:#aaa;
+    font-size:13px;
+}
+
+.cta button{
+    border:none;
+    background:#e5bd62;
+    color:#171717;
+    padding:14px 24px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+.site-footer{
+    background:#f8f5ef;
+    border-top:1px solid #e5dfd3;
+}
+
+.footer-main{
+    padding:60px 5% 50px;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr 1.3fr;
+    gap:40px;
+}
+
+.footer-brand img{
+    width:85px;
+    height:85px;
+    object-fit:cover;
+}
+
+.footer-brand p{
+    margin-top:18px;
+    color:#555;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.socials{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.socials a{
+    width:34px;
+    height:34px;
+    border:1px solid #bbb;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#171717;
+}
+
+.footer-column{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-column h3{
+    font-family:Georgia,serif;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.footer-column a{
+    text-decoration:none;
+    color:#555;
+    font-size:13px;
+}
+
+.contact p{
+    color:#555;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.footer-bottom{
+    background:#171717;
+    color:#aaa;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    header{
+        height:68px;
+        padding:0 15px;
+    }
+
+    .logo img{
+        width:52px;
+        height:52px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        padding:55px 20px 50px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        line-height:1.1;
+    }
+
+    .events-section{
+        padding:40px 20px 50px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .event-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .event-image{
+        height:210px;
+    }
+
+    .cta{
+        margin:0 20px 50px;
+        padding:28px 22px;
+        display:block;
+    }
+
+    .cta button{
+        margin-top:20px;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+        gap:35px 25px;
+        padding:45px 25px;
+    }
+
+    .footer-brand{
+        grid-column:1 / -1;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        <img src="logo.jpg" alt="Kakinada Diaries">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="places.html">Places</a>
+        <a href="food.html">Food</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="stories.html">Stories</a>
+        <a href="services.html">Services</a>
+    </nav>
+
+    <button class="menu-btn">☰</button>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="eyebrow">WHAT'S HAPPENING</div>
+
+    <h1>
+        Kakinada <span>Events</span>
+    </h1>
+
+    <p>
+        Discover concerts, festivals, exhibitions,
+        workshops and everything happening around Kakinada.
+    </p>
+
+</section>
+
+
+<!-- EVENTS -->
+<section class="events-section">
+
+    <div class="eyebrow">
+        UPCOMING EVENTS
+    </div>
+
+    <h2 class="section-title">
+        What's happening in Kakinada
+    </h2>
+
+
+    <div class="event-grid">
+
+
+        <!-- EVENT 1 -->
+        <article class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80"
+                    alt="Music event">
+
+                <div class="event-date">
+                    <strong>28</strong>
+                    <span>JUN</span>
+                </div>
+
+            </div>
+
+            <div class="event-info">
+
+                <div class="event-tag">
+                    MUSIC
+                </div>
+
+                <h2>
+                    Paatala Pallaki
+                </h2>
+
+                <p>
+                    A musical night filled with songs,
+                    live performances and unforgettable moments.
+                </p>
+
+                <div class="event-details">
+                    📅 Sunday, 28 June 2026<br>
+                    🕕 6:30 PM<br>
+                    📍 Fabin Convention, Kakinada
+                </div>
+
+                <a href="#" class="event-button">
+                    View Event →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVENT 2 -->
+        <article class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=80"
+                    alt="Festival">
+
+                <div class="event-date">
+                    <strong>15</strong>
+                    <span>JUL</span>
+                </div>
+
+            </div>
+
+            <div class="event-info">
+
+                <div class="event-tag">
+                    FESTIVAL
+                </div>
+
+                <h2>
+                    Kakinada Cultural Fest
+                </h2>
+
+                <p>
+                    Celebrate local culture, art, food
+                    and entertainment with the community.
+                </p>
+
+                <div class="event-details">
+                    📅 Wednesday, 15 July 2026<br>
+                    🕕 5:00 PM<br>
+                    📍 Kakinada
+                </div>
+
+                <a href="#" class="event-button">
+                    View Event →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVENT 3 -->
+        <article class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80"
+                    alt="Concert">
+
+                <div class="event-date">
+                    <strong>02</strong>
+                    <span>AUG</span>
+                </div>
+
+            </div>
+
+            <div class="event-info">
+
+                <div class="event-tag">
+                    CONCERT
+                </div>
+
+                <h2>
+                    Live Music Night
+                </h2>
+
+                <p>
+                    Experience an evening of live music,
+                    performances and great vibes.
+                </p>
+
+                <div class="event-details">
+                    📅 Sunday, 2 August 2026<br>
+                    🕕 7:00 PM<br>
+                    📍 Kakinada
+                </div>
+
+                <a href="#" class="event-button">
+                    View Event →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVENT 4 -->
+        <article class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
+                    alt="Workshop">
+
+                <div class="event-date">
+                    <strong>10</strong>
+                    <span>AUG</span>
+                </div>
+
+            </div>
+
+            <div class="event-info">
+
+                <div class="event-tag">
+                    WORKSHOP
+                </div>
+
+                <h2>
+                    Creative Workshop
+                </h2>
+
+                <p>
+                    Learn, create and connect with other
+                    creative people from Kakinada.
+                </p>
+
+                <div class="event-details">
+                    📅 Monday, 10 August 2026<br>
+                    🕙 10:00 AM<br>
+                    📍 Kakinada
+                </div>
+
+                <a href="#" class="event-button">
+                    View Event →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVENT 5 -->
+        <article class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=80"
+                    alt="Community event">
+
+                <div class="event-date">
+                    <strong>22</strong>
+                    <span>AUG</span>
+                </div>
+
+            </div>
+
+            <div class="event-info">
+
+                <div class="event-tag">
+                    COMMUNITY
+                </div>
+
+                <h2>
+                    Community Meet
+                </h2>
+
+                <p>
+                    Meet local people, creators and businesses
+                    at this community gathering.
+                </p>
+
+                <div class="event-details">
+                    📅 Saturday, 22 August 2026<br>
+                    🕕 6:00 PM<br>
+                    📍 Kakinada
+                </div>
+
+                <a href="#" class="event-button">
+                    View Event →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVENT 6 -->
+        <article class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80"
+                    alt="Entertainment event">
+
+                <div class="event-date">
+                    <strong>05</strong>
+                    <span>SEP</span>
+                </div>
+
+            </div>
+
+            <div class="event-info">
+
+                <div class="event-tag">
+                    ENTERTAINMENT
+                </div>
+
+                <h2>
+                    Weekend Live Show
+                </h2>
+
+                <p>
+                    Spend your weekend with live entertainment
+                    and a great local crowd.
+                </p>
+
+                <div class="event-details">
+                    📅 Saturday, 5 September 2026<br>
+                    🕕 7:00 PM<br>
+                    📍 Kakinada
+                </div>
+
+                <a href="#" class="event-button">
+                    View Event →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+    <div>
+
+        <h2>
+            Have an event in Kakinada?
+        </h2>
+
+        <p>
+            Submit your event and let thousands
+            of local people discover it.
+        </p>
+
+    </div>
+
+    <button>
+        Submit Your Event →
+    </button>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+<div class="footer-main">
+
+    <div class="footer-brand">
+
+        <img src="logo.jpg" alt="Kakinada Diaries">
+
+        <p>
+            Everything Kakinada.<br>
+            One Place.
+        </p>
+
+        <div class="socials">
+            <a href="#">◎</a>
+            <a href="#">◉</a>
+            <a href="#">▶</a>
+            <a href="#">✉</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="businesses.html">Businesses</a>
+        <a href="places.html">Places</a>
+        <a href="food.html">Food</a>
+        <a href="events.html">Events</a>
+        <a href="stories.html">Stories</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>For Businesses</h3>
+
+        <a href="#">Promote Your Business</a>
+        <a href="#">Business Login</a>
+        <a href="#">Add Business</a>
+        <a href="#">Pricing</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Support</h3>
+
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+
+    </div>
+
+
+    <div class="footer-column contact">
+
+        <h3>Contact Us</h3>
+
+        <p>📞 +91 90105 81234</p>
+        <p>✉ hello@kakinadadiaries.com</p>
+        <p>📍 Kakinada, Andhra Pradesh</p>
+
+    </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+    <span>
+        © 2026 Kakinada Diaries. All Rights Reserved.
+    </span>
+
+    <span>
+        Made with ❤️ for Kakinada
+    </span>
+
+</div>
+
+</footer>
+
+</body>
+  </html>
